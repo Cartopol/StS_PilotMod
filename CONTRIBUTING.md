@@ -49,12 +49,12 @@ This project uses GitHub Pull Requests to handle merging contributed changes. If
     # Don't use a path with spaces in it!
     cd C:/code
     
-    # This will clone the repository into a new folder named "the_warlord" inside the directory you picked above
+    # This will clone the repository into a new folder named "shapes" inside the directory you picked above
     git clone --origin upstream [[git origin repo url]]
-    cd the_warlord
+    cd shapes
    
     # Replace "your_username" with your GitHub username!
-    git remote add my_fork https://github.com/your_username/the_warlord.git
+    git remote add my_fork https://github.com/your_username/shapes.git
 
     # These are "aliases", helper commands that will make it easier to use GitHub Pull Requests
     git config --global alias.newfeature "!git checkout master && git pull && git checkout -b"

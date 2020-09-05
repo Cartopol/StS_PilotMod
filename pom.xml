@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>stswarlordmod</groupId>
-    <artifactId>WarlordMod</artifactId>
-    <name>The Warlord</name>
-    <version>0.0.13</version>
-    <description>The Warlord, a character mod by the StS community.</description>
+    <groupId>shapesmod</groupId>
+    <artifactId>ShapesMod</artifactId>
+    <name>The Shapes</name>
+    <version>0.0.1</version>
+    <description>The Shapes, a shapeshifting character for Slay the Spire.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
