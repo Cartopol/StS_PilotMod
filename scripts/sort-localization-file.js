@@ -1,4 +1,4 @@
-// Usage: node sort-localization-file.js ./WarlordMod-Card-Strings.json
+// Usage: node sort-localization-file.js ./PilotMod-Card-Strings.json
 const fs = require('fs');
 const process = require('process');
 

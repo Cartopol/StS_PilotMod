@@ -1,11 +1,11 @@
 // This takes all the "original" relic images under:
 //
-//     /src/main/resources/warlordResources/images/relics/*.png
+//     /src/main/resources/pilotResources/images/relics/*.png
 //
 // ...which should be 128x128 pngs with everything but the center 50-60px square
 // area transparent, and generates outline images under
 //
-//     /src/main/resources/the_warlordResources/images/relics/generated/*_outline.png
+//     /src/main/resources/the_pilotResources/images/relics/generated/*_outline.png
 //
 // This requires "magick" be present on your path to run. On Windows, you can get
 // it by installing Chocolatey and then running "choco install imagemagick"
@@ -23,8 +23,8 @@ const process = require('process');
 
 const relicFilterSubstring = process.argv.length > 2 ? process.argv[2] : null;
 
-const inputDirectory = path.join(__dirname, '../src/main/resources/the_warlordResources/images/relics');
-const outputDirectory = path.join(__dirname, '../src/main/resources/the_warlordResources/images/relics/generated');
+const inputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/relics');
+const outputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/relics/generated');
 
 const inputFileNames = fs.readdirSync(inputDirectory).filter(f => /\.png/.test(f));
 

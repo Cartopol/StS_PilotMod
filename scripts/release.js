@@ -11,7 +11,7 @@
 //   * Extract changelog info from CHANGELOG.md's [Unreleased] section
 //   * Produce GitHub, Steam, and Discord-formatted release notes
 //   * Update pom.xml, steam_workshop/config.json, and CHANGELOG.md
-//   * Clean up any stale WarlordMod.jar file
+//   * Clean up any stale PilotMod.jar file
 //
 // Then, it will prompt you to check its work, rebuild the mod, and test it.
 // Once you confirm you've done that, it will:
@@ -105,7 +105,7 @@ fs.writeFileSync(configJsonPath, JSON.stringify(configJsonContent, null, 2));
 
 console.log('Cleaning obsolete jar file...');
 const steamWorkspacePath = path.join(__dirname, '../steam_workshop');
-const jarPath = path.join(steamWorkspacePath, 'content/WarlordMod.jar');
+const jarPath = path.join(steamWorkspacePath, 'content/PilotMod.jar');
 try {
     fs.unlinkSync(jarPath);
 } catch(err) {
@@ -152,7 +152,7 @@ function promptToContinue() {
     child_process.execSync(`"${javaPath}" -jar "${modUploaderPath}" upload -w "${steamWorkspacePath}"`, {stdio: 'inherit'});
 
     console.log(`Uploading new version as a GitHub release...`);
-    child_process.execSync(`hub release create --attach "${jarPath}#WarlordMod.jar" --file - v${version}`, {input: hubReleaseInput});
+    child_process.execSync(`hub release create --attach "${jarPath}#PilotMod.jar" --file - v${version}`, {input: hubReleaseInput});
 
     console.log('Done! Suggested Discord post:\n');
     // Repeating so it'll be below the fold of "uploading..." spam

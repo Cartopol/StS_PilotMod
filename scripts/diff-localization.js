@@ -1,6 +1,6 @@
 // Usage: node diff-localization.js old-lang new-lang old-git-tag new-git-tag
 // * langs should match directory name under
-//   src/main/resources/the_warlordResources/localization/
+//   src/main/resources/the_pilotResources/localization/
 // * old-git-tag and new-git-tag are "git commit-ish"es
 
 const child_process = require('child_process');
@@ -25,7 +25,7 @@ console.log(`COMPARING ${oldLang}@${oldCommit} vs ${newLang}@${newCommit}`);
 console.log(structureOnly ? 'COMPARING STRUCTURE ONLY' : 'COMPARING STRUCTURE AND VALUES');
 console.log('');
 
-const locDir = path.join(__dirname, '../src/main/resources/the_warlordResources/localization');
+const locDir = path.join(__dirname, '../src/main/resources/the_pilotResources/localization');
 
 function getFiles(commit, lang) {
     const gitOutput = child_process.execSync(`git ls-tree -r ${commit} --name-only ./${lang}`, {cwd: locDir});

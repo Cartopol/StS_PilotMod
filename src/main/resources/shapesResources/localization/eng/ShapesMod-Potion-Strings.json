@@ -1,8 +1,0 @@
-{
-  "shapes:PosturePotion": {
-    "NAME": "Posture Potion",
-    "DESCRIPTIONS": [
-      "Gain #b%1$s #yPosture."
-    ]
-  }
-}

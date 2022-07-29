@@ -1,9 +1,0 @@
-{
-  "shapes:FencingBoots": {
-    "NAME": "Fencing Boots",
-    "FLAVOR": "You are the fencing queen, young and ascension 17...",
-    "DESCRIPTIONS": [
-      "At the start of combat, gain #b3 the_warlord:Posture."
-    ]
-  }
-}

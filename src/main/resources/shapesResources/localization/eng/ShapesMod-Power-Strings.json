@@ -1,9 +1,0 @@
-{
-  "shapes:ExamplePower": {
-    "NAME": "Example Power",
-    "DESCRIPTIONS": [
-      "Does something #b%1$s time.",
-      "Does something #b%1$s times."
-    ]
-  }
-}

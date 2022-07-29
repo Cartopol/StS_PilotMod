@@ -1,11 +1,11 @@
 // This takes all the "original" images under:
 //
-//     /src/main/resources/the_warlordResources/images/cards/originals/**/*.png
+//     /src/main/resources/the_pilotResources/images/cards/originals/**/*.png
 //
 // ...which should be *uncropped* image at 500x380, and for each of them, applies the appropriate masking and resizing
 // based on card type to generate images to be used by the game in:
 //
-//     /src/main/resources/the_warlordResources/images/cards/generated/*.png
+//     /src/main/resources/the_pilotResources/images/cards/generated/*.png
 //
 // This requires "magick" be present on your path to run. On Windows, you can get it by installing Chocolatey and
 // then running "choco install imagemagick"
@@ -31,9 +31,9 @@ const cardMasksByCardType = {
   'CURSE': path.join(__dirname, 'card_masks/skill.png'),
 };
 
-const inputDirectory = path.join(__dirname, '../src/main/resources/the_warlordResources/images/cards/originals');
-const outputDirectory = path.join(__dirname, '../src/main/resources/the_warlordResources/images/cards/generated');
-const srcDirectory = path.join(__dirname, '../src/main/java/the_warlord/cards');
+const inputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/cards/originals');
+const outputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/cards/generated');
+const srcDirectory = path.join(__dirname, '../src/main/java/the_pilot/cards');
 
 function findFilesRecursiveSync(directory, filePattern) {
   const results = [];
