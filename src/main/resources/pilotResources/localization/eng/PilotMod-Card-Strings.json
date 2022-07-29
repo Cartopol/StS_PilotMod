@@ -13,7 +13,8 @@
   },
   "pilot:Titanfall": {
     "NAME": "Titanfall",
-    "DESCRIPTION": "Deploy Titan with !M! Shields. Gain !pilot:UrMagic! Protect. NL Add *Chaingun to your draw pile."
+    "DESCRIPTION": "Deploy Titan with !M! Shields. Gain !pilot:UrMagic! Protect. NL Add *Chaingun to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deploy Titan with !M! Shields. Gain !pilot:UrMagic! Protect. NL Add *Chaingun to your draw pile."
   },
   "pilot:Chaingun": {
     "NAME": "X016A2 Chaingun",
@@ -34,5 +35,17 @@
   "pilot:EVA8": {
     "NAME": "EVA-8",
     "DESCRIPTION": "Deal !D! damage. NL Engage: deal !D! damage to ALL enemies instead."
+  },
+  "pilot:DoubleTake": {
+    "NAME": "Double Take",
+    "DESCRIPTION": "Deal !D! damage. NL If you have Advantage, gain [E] ."
+  },
+  "pilot:G2A5": {
+    "NAME": "G2A5",
+    "DESCRIPTION": "Deal !D! damage. NL If you have Advantage, gain !M! Dexterity."
+  },
+  "pilot:Wallrun": {
+    "NAME": "Wallrun",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity."
   }
 }

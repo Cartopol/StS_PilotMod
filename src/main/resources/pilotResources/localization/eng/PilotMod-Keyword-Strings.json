@@ -11,5 +11,21 @@
   {
     "NAMES": ["slow", "slowed"],
     "DESCRIPTION": "Slowed creatures take 10% more damage from attacks per card already played this turn."
+  },
+  {
+    "NAMES": ["advantage", "advantaged"],
+    "DESCRIPTION": "You have Advantage if you have drawn any cards since the start of your turn."
+  },
+  {
+    "NAMES": ["momentum"],
+    "DESCRIPTION": "You have Momentum if you have gained Dexterity this turn."
+  },
+  {
+    "NAMES": ["titan"],
+    "DESCRIPTION": "Unplayable unless you have your Titan deployed."
+  },
+  {
+    "NAMES": ["reflex"],
+    "DESCRIPTION": "When drawn, play this card automatically and discard the top card from your Draw Pile."
   }
 ]

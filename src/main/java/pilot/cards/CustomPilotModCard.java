@@ -279,4 +279,9 @@ public abstract class CustomPilotModCard extends CustomCard {
         logger.info("Pilot is engaging: {} ", isEngaging);
         return isEngaging;
     }
+
+//    public boolean hasMomentum() {
+//        boolean hasMomentum = AbstractDungeon.player.dr
+//
+//    }
 }
