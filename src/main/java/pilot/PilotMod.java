@@ -79,6 +79,10 @@ public class PilotMod implements
         return MOD_ID + "Resources/images/powers/" + resourcePath;
     }
 
+    public static String makeOrbPath(String resourcePath) {
+        return MOD_ID + "Resources/images/orbs/" + resourcePath;
+    }
+
     public static String makeImagePath(String resourcePath) {
         return MOD_ID + "Resources/images/" + resourcePath;
     }

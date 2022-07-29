@@ -21,13 +21,17 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pilot.PilotMod;
 import pilot.cards.pilot.Defend;
+import pilot.cards.pilot.Pilot_Sprint;
 import pilot.cards.pilot.Strike;
+import pilot.cards.pilot.Titanfall;
+import pilot.titan.TitanOrb;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -215,7 +219,9 @@ public class Pilot extends CustomPlayer {
         startingDeck.add(Defend.ID);
         startingDeck.add(Defend.ID);
         startingDeck.add(Defend.ID);
-        startingDeck.add(Defend.ID);
+
+        startingDeck.add(Titanfall.ID);
+        startingDeck.add(Pilot_Sprint.ID);
 
         return startingDeck;
     }
@@ -386,5 +392,23 @@ public class Pilot extends CustomPlayer {
 
     @Override
     public void renderPowerTips(SpriteBatch sb) { super.renderPowerTips(sb);
+    }
+
+    public boolean hasTitan() {
+        for (AbstractOrb o : this.orbs) {
+            if (o instanceof TitanOrb) {
+                return true;
+            }
+        } return false;
+    }
+
+    public TitanOrb getTitan() {
+        if (hasTitan()) {
+            for (AbstractOrb o : this.orbs) {
+                if (o instanceof TitanOrb) {
+                    return (TitanOrb) o;
+                }
+            }
+        } return null;
     }
 }

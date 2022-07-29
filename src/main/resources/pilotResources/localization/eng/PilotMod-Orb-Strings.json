@@ -1,0 +1,11 @@
+{
+	"pilot: TitanOrb": {
+		"NAME": "Titan",
+		"DESCRIPTION": [
+			"#yMid-Air: If in the air at the end of turn, gain #b",
+			" block (improved by #yFocus). NL #yCatch: Your next card that blocks, blocks for #b",
+			" more (improved by #yGrip).",
+			" Mental Barrier (improved by #yFocus). NL #yCatch: Your next card this turn that blocks, blocks for #b"
+		]
+	}
+}

@@ -1,9 +1,9 @@
 {
-  "pilot:ExamplePower": {
-    "NAME": "Example Power",
+  "pilot:ProtectPower": {
+    "NAME": "Protect",
     "DESCRIPTIONS": [
-      "Does something #b%1$s time.",
-      "Does something #b%1$s times."
+      "The next time you take damage, reduce your Titan's Shield instead.",
+      "The next #b%1$s times you take damage, reduce your Titan's Shield instead."
     ]
   }
 }
