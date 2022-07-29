@@ -17,6 +17,22 @@
   },
   "pilot:Chaingun": {
     "NAME": "X016A2 Chaingun",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Protect."
+    "DESCRIPTION": "Titan. NL Deal !D! damage. NL Gain !M! Protect."
+  },
+  "pilot:Kick": {
+    "NAME": "Kick",
+    "DESCRIPTION": "Reflex. NL Deal !D! damage. NL Draw !M! card."
+  },
+  "pilot:Carbine": {
+    "NAME": "R-201 Carbine",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Dexterity."
+  },
+  "pilot:Flatline": {
+    "NAME": "Flatline",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to a random enemy twice."
+  },
+  "pilot:EVA8": {
+    "NAME": "EVA-8",
+    "DESCRIPTION": "Deal !D! damage. NL Engage: deal !D! damage to ALL enemies instead."
   }
 }

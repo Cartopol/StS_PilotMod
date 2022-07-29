@@ -3,11 +3,19 @@ package pilot.cards;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
+import com.megacrit.cardcrawl.actions.common.MillAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pilot.PilotMod;
+import pilot.characters.Pilot;
+import pilot.patches.ReflexFieldPatch;
+import pilot.patches.TitanFieldPatch;
 
 import java.util.List;
 
@@ -39,6 +47,11 @@ public abstract class CustomPilotModCard extends CustomCard {
     protected String[] EXTENDED_DESCRIPTION;
 
     private String rawDynamicDescriptionSuffix = "";
+
+    public static final Logger logger = LogManager.getLogger(PilotMod.class.getName());
+
+    public boolean isReflexCard = false;
+
 
     private static String imgFromId(String id) {
         String unprefixedId = id.replace(PilotMod.MOD_ID + ":","");
@@ -238,7 +251,32 @@ public abstract class CustomPilotModCard extends CustomCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (TitanFieldPatch.requiresTitan.get(this)) {
+            return ((Pilot)AbstractDungeon.player).hasTitan();
+        }
+        return super.canUse(p, m);
+    }
+
+
+
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        if (ReflexFieldPatch.hasReflex.get(this)) {
+            AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(this, true, true, true));
+            AbstractDungeon.actionManager.addToBottom(new MillAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+        }
+    }
+
+    @Override
     public List<TooltipInfo> getCustomTooltips() {
         return null;
+    }
+
+    public boolean isEngaging() {
+        boolean isEngaging = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= 1;
+        logger.info("Pilot is engaging: {} ", isEngaging);
+        return isEngaging;
     }
 }
