@@ -220,6 +220,11 @@ public abstract class CustomPilotModCard extends CustomCard {
         baseBlock = realBaseBlock;
         isBlockModified = block != baseBlock;
 
+        if (TitanFieldPatch.requiresTitan.get(this) && !((Pilot)AbstractDungeon.player).hasTitan()) {
+            rawDescription = "Ethereal. NL" + rawDescription;
+            this.isEthereal = true;
+        }
+
         setRawDynamicDescriptionSuffix(getRawDynamicDescriptionSuffix());
     }
 
@@ -280,8 +285,7 @@ public abstract class CustomPilotModCard extends CustomCard {
         return isEngaging;
     }
 
-//    public boolean hasMomentum() {
-//        boolean hasMomentum = AbstractDungeon.player.dr
-//
-//    }
+
+
+
 }

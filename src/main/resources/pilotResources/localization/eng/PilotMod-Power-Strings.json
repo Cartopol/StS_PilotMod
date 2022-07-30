@@ -5,5 +5,11 @@
       "The next time you take damage, reduce your Titan's Shield instead.",
       "The next #b%1$s times you take damage, reduce your Titan's Shield instead."
     ]
+  },
+  "pilot:LoseProtectPower": {
+    "NAME": "Lose Protect",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose #b%1$s Protect."
+    ]
   }
 }

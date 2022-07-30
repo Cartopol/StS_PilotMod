@@ -63,6 +63,11 @@ public class TitanOrb extends AbstractOrb {
         }
     }
 
+    public void increaseShields(float amount) {
+        currentShields += amount;
+        logger.info("Increased shields by {}, current shields: {}", amount, currentShields);
+    }
+
     public void updateDescription() {
 
     }

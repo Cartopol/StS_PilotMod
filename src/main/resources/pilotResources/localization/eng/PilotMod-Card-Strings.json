@@ -9,16 +9,17 @@
   },
   "pilot:Pilot_Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! cards. NL Gain !pilot:UrMagic! Dexterity."
+    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! Dexterity. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! Dexterity."
   },
   "pilot:Titanfall": {
     "NAME": "Titanfall",
-    "DESCRIPTION": "Deploy Titan with !M! Shields. Gain !pilot:UrMagic! Protect. NL Add *Chaingun to your draw pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Deploy Titan with !M! Shields. Gain !pilot:UrMagic! Protect. NL Add *Chaingun to your draw pile."
+    "DESCRIPTION": "Deploy Titan with !M! pilot:Shields. Gain !pilot:UrMagic! pilot:Protect. NL Add *Chaingun to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deploy Titan with !M! pilot:Shields. Gain !pilot:UrMagic! pilot:Protect. NL Add *Chaingun to your draw pile."
   },
   "pilot:Chaingun": {
     "NAME": "X016A2 Chaingun",
-    "DESCRIPTION": "Titan. NL Deal !D! damage. NL Gain !M! Protect."
+    "DESCRIPTION": "Titan. NL Deal !D! damage. NL Gain !M! pilot:Protect this turn."
   },
   "pilot:Kick": {
     "NAME": "Kick",
@@ -34,18 +35,43 @@
   },
   "pilot:EVA8": {
     "NAME": "EVA-8",
-    "DESCRIPTION": "Deal !D! damage. NL Engage: deal !D! damage to ALL enemies instead."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Engage: deal !D! damage to ALL enemies instead."
   },
   "pilot:DoubleTake": {
     "NAME": "Double Take",
-    "DESCRIPTION": "Deal !D! damage. NL If you have Advantage, gain [E] ."
+    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Advantage, gain [E] ."
+  },
+  "pilot:Volt": {
+    "NAME": "Volt",
+    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Momentum, gain [E] ."
   },
   "pilot:G2A5": {
     "NAME": "G2A5",
-    "DESCRIPTION": "Deal !D! damage. NL If you have Advantage, gain !M! Dexterity."
+    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Advantage, gain !M! Dexterity."
   },
   "pilot:Wallrun": {
     "NAME": "Wallrun",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity."
+  },
+  "pilot:Alternator": {
+    "NAME": "Alternator",
+    "DESCRIPTION": "Deal !D! damage to a random enemy twice. NL If you have pilot:Momentum, Dexterity increases this damage."
+  },
+  "pilot:CAR": {
+    "NAME": "CAR",
+    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Momentum, Dexterity increases this damage."
+  },
+  "pilot:Embark": {
+    "NAME": "Embark",
+    "DESCRIPTION": "Gain !M! pilot:Protect this turn."
+  },
+  "pilot:BatteryBackUp": {
+    "NAME": "Battery Back-up",
+    "DESCRIPTION": "Give your Titan !M! pilot:Shields. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Give your Titan !M! pilot:Shields. NL Exhaust."
+  },
+  "pilot:WallHang": {
+    "NAME": "Wall Hang",
+    "DESCRIPTION": "Gain !B! Block. NL If you have pilot:Advantage, lose !M! Dexterity."
   }
 }

@@ -2,7 +2,6 @@ package pilot.characters;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
-import basemod.interfaces.OnPlayerTurnStartPostDrawSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -28,7 +27,6 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pilot.PilotMod;
-import pilot.cards.OnDrawCardSubscriber;
 import pilot.cards.pilot.Defend;
 import pilot.cards.pilot.Pilot_Sprint;
 import pilot.cards.pilot.Strike;
@@ -46,14 +44,9 @@ import static pilot.characters.Pilot.Enums.PILOT_CARD_COLOR;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in PilotMod-Character-Strings.json in the resources
 
-public class Pilot extends CustomPlayer implements OnDrawCardSubscriber, OnPlayerTurnStartPostDrawSubscriber {
+public class Pilot extends CustomPlayer  {
     public static final Logger logger = LogManager.getLogger(PilotMod.class.getName());
 
-    @Override
-    public void receiveOnPlayerTurnStartPostDraw() {
-        hasAdvantage = false;
-        PilotMod.logger.info("Start of turn, Pilot loses advantage");
-    }
 
     // =============== CHARACTER ENUMERATORS =================
     // These are enums for your Characters color (both general color and for the card library) as well as
@@ -114,6 +107,8 @@ public class Pilot extends CustomPlayer implements OnDrawCardSubscriber, OnPlaye
     // =============== CHARACTER ENUMERATORS  =================
 
     public boolean hasAdvantage = false;
+    public int cardsDrawnThisTurn = 0;
+    public boolean hasMomentum = false;
 
 
     // =============== BASE STATS =================
@@ -422,15 +417,33 @@ public class Pilot extends CustomPlayer implements OnDrawCardSubscriber, OnPlaye
         } return null;
     }
 
-
     @Override
-    public void onDraw() {
-        hasAdvantage = true;
-        PilotMod.logger.info("Pilot has advantage");
+    public void draw(int numCards) {
+        super.draw(numCards);
+        cardsDrawnThisTurn += 1;
+        if (cardsDrawnThisTurn > 5) {
+            hasAdvantage = true;
+            PilotMod.logger.info("Pilot has Advantage");
+        }
     }
 
+//    @Override
+//    public boolean onReceivePowerToCancel(AbstractPower power, AbstractCreature source) {
+//        PilotMod.logger.info("Pilot onReceivePowerToCancel called on Pilot");
+//        if (power instanceof DexterityPower) {
+//            hasMomentum = true;
+//            PilotMod.logger.info("Pilot has Momentum");
+//        }
+//        return false;
+//    }
 
+    @Override
+    public void applyStartOfTurnPostDrawRelics() {
+        super.applyStartOfTurnPostDrawRelics();
+        hasMomentum = false;
+        hasAdvantage = false;
+                cardsDrawnThisTurn = 0;
+        PilotMod.logger.info("Pilot no longer has Advantage or Momentum");
 
-
-
+    }
 }

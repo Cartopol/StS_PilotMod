@@ -40,6 +40,11 @@ public class EVA8 extends CustomPilotModCard {
     }
 
     @Override
+    public boolean shouldGlowGold() {
+        return isEngaging();
+    }
+
+    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();

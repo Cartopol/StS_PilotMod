@@ -22,10 +22,22 @@
   },
   {
     "NAMES": ["titan"],
-    "DESCRIPTION": "Unplayable unless you have your Titan deployed."
+    "DESCRIPTION": "Unplayable unless you have your Titan deployed. When your Titan is destroyed, Titan cards become Ethereal."
   },
   {
     "NAMES": ["reflex"],
     "DESCRIPTION": "When drawn, play this card automatically and discard the top card from your Draw Pile."
+  },
+  {
+    "NAMES": ["engage", "engaged"],
+    "DESCRIPTION": "Engage effects trigger if this card is the first card played this turn."
+  },
+  {
+    "NAMES": ["shields"],
+    "DESCRIPTION": "When depleted, your Titan is destroyed."
+  },
+  {
+    "NAMES": ["protect", "protected"],
+    "DESCRIPTION": "The next time you would take damage, reduce this by 1 and the damage is dealt to your Titan's Shields instead."
   }
 ]

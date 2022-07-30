@@ -9,10 +9,12 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -41,6 +43,8 @@ public class PilotMod implements
         EditCharactersSubscriber,
         PostInitializeSubscriber,
         OnPowersModifiedSubscriber,
+//        OnApplyPowerToCancelSubscriber,
+        PostPowerApplySubscriber,
         StartActSubscriber,
         StartGameSubscriber {
     public static final String MOD_ID = "pilot";
@@ -316,11 +320,37 @@ public class PilotMod implements
         }
     }
 
+//    @Override
+//    public boolean onReceivePowerToCancel(AbstractPower power, AbstractCreature source) {
+//        logger.info("OnReceivePowerToCancel called on mod");
+//        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+//                !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+//            if (power.owner instanceof Pilot) {
+//                ((OnApplyPowerToCancelSubscriber) power.owner).onReceivePowerToCancel(power, source);
+//            }
+//        }
+//
+//
+//            return false;
+//    }
+
     @Override
     public void receiveStartAct() {
     }
 
     @Override
     public void receiveStartGame() {
+    }
+
+    @Override
+    public void receivePostPowerApplySubscriber(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1) {
+        logger.info("receivePostPower called on mod");
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+                !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            if (abstractPower instanceof DexterityPower) {
+                ((Pilot)AbstractDungeon.player).hasMomentum = true;
+                logger.info("Player has Momentum");
+            }
+        }
     }
 }

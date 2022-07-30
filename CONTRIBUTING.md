@@ -34,8 +34,6 @@ We welcome contributions, including from newcomers with no prior modding experie
 
 ## How to contribute changes
 
-*Note: if this is too complicated and you just want to send us some paint art for cards, feel free to reach out on the [Jorbs Discord](https://discord.gg/invite/jorbs) in *#jorbs-spire-mod-char* - someone there will give you a hand!*
-
 This project uses GitHub Pull Requests to handle merging contributed changes. If you're new to using GitHub or Pull Requests, here's the TL;DR for the workflow I like to use:
 
 ### First-time setup

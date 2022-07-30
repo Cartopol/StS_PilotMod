@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.patches.TitanFieldPatch;
+import pilot.powers.LoseProtectPower;
 import pilot.powers.ProtectPower;
 
 public class Chaingun extends CustomPilotModCard {
@@ -35,6 +36,7 @@ public class Chaingun extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, PROTECT)));
+        addToBot(new ApplyPowerAction(p, p, new LoseProtectPower(p, PROTECT)));
     }
 
     @Override
