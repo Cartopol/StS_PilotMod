@@ -21,8 +21,8 @@
     "DESCRIPTION": "You have Momentum if you have gained Dexterity this turn."
   },
   {
-    "NAMES": ["titan"],
-    "DESCRIPTION": "Unplayable unless you have your Titan deployed. When your Titan is destroyed, Titan cards become Ethereal."
+    "NAMES": ["armament", "armaments"],
+    "DESCRIPTION": "Unplayable unless you have your Titan deployed. Armaments are always Ethereal, and Exhaust when played."
   },
   {
     "NAMES": ["reflex"],
@@ -39,5 +39,9 @@
   {
     "NAMES": ["protect", "protected"],
     "DESCRIPTION": "The next time you would take damage, reduce this by 1 and the damage is dealt to your Titan's Shields instead."
+  },
+  {
+    "NAMES": ["deploy", "deployed"],
+    "DESCRIPTION": "If you have a Titan, the effects of this card will happen immediately. If you don't, it will happen the next time you deploy it."
   }
 ]

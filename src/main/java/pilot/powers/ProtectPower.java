@@ -34,6 +34,8 @@ public class ProtectPower extends CustomPilotModPower {
         return damageAmount;
     }
 
+
+
     @Override
     public void updateDescription() {
         if (amount == 1) {

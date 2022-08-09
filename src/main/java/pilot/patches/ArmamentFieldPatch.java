@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
         clz = AbstractCard.class,
         method = SpirePatch.CLASS
 )
-public class TitanFieldPatch {
-    public static SpireField<Boolean> requiresTitan = new SpireField<>(() -> false);
+public class ArmamentFieldPatch {
+    public static SpireField<Boolean> isArmament = new SpireField<>(() -> false);
 
 }

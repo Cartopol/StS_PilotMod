@@ -1,6 +1,6 @@
 package pilot.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -23,7 +23,9 @@ public class LoseProtectPower extends CustomPilotModPower {
     @Override
     public void atStartOfTurn() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new ProtectPower(this.owner, -this.amount), -this.amount));
+        if (owner.hasPower(ProtectPower.POWER_ID)) {
+            addToBot(new ReducePowerAction(owner, owner, ProtectPower.POWER_ID, amount));
+        }
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 

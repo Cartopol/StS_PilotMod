@@ -23,7 +23,7 @@
   },
   "pilot:Kick": {
     "NAME": "Kick",
-    "DESCRIPTION": "Reflex. NL Deal !D! damage. NL Draw !M! card."
+    "DESCRIPTION": " pilot:Reflex. NL Deal !D! damage. NL Draw !M! card."
   },
   "pilot:Carbine": {
     "NAME": "R-201 Carbine",
@@ -73,5 +73,53 @@
   "pilot:WallHang": {
     "NAME": "Wall Hang",
     "DESCRIPTION": "Gain !B! Block. NL If you have pilot:Advantage, lose !M! Dexterity."
+  },
+  "pilot:Airstrafe": {
+    "NAME": "Airstrafe",
+    "DESCRIPTION": "Double your Dexterity. NL Exhaust."
+  },
+  "pilot:Pilot_Dash": {
+    "NAME": "Dash",
+    "DESCRIPTION": " pilot:Armament. pilot:Reflex. NL Gain !B! Block. NL Gain !M! Dexterity."
+  },
+  "pilot:BunnyHop": {
+    "NAME": "Bunny Hop",
+    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity. NL If you have pilot:Advantage, gain [E] .",
+    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity and draw a card. NL If you have pilot:Advantage, gain [E] ."
+  },
+  "pilot:Strider": {
+    "NAME": "Strider",
+    "DESCRIPTION": " pilot:Deploy: Give your Titan !M! pilot:Shields. NL Shuffle !pilot:MetaMagic! *Dash into your draw pile.",
+    "UPGRADE_DESCRIPTION": " pilot:Deploy: Give your Titan !M! pilot:Shields. NL Shuffle !pilot:MetaMagic! *Dash+ into your draw pile."
+  },
+  "pilot:Leadwall": {
+    "NAME": "Leadwall",
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL If you are engaging, gain !B! Block and !M! Dexterity."
+  },
+  "pilot:PhaseDash": {
+    "NAME": "Phase Dash",
+    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:metaMagic! cards.",
+    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:metaMagic! card."
+  },
+  "pilot:Ronin": {
+    "NAME": "Ronin",
+    "DESCRIPTION": " pilot:Deploy: Give your Titan !M! pilot:Shields. NL Shuffle !pilot:MetaMagic! *Leadwall and !pilot:MetaMagic! *Phase Dash into your draw pile."
+  },
+  "pilot:CoverFire": {
+    "NAME": "Cover Fire",
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak."
+  },
+  "pilot:Shield": {
+    "NAME": "Shield",
+    "DESCRIPTION": " pilot:Armament. NL Gain !B! Block. NL Gain !M! pilot:Protect this turn."
+  },
+  "pilot:Rearm": {
+    "NAME": "Rearm",
+    "DESCRIPTION": " pilot:Armament. NL Shuffle !M! pilot:Armaments from your exhaust pile into your Titan."
+  },
+  "pilot:Command": {
+    "NAME": "Command",
+    "DESCRIPTION": "Draw !M! pilot:Armament. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! pilot:Armament."
   }
 }

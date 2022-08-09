@@ -9,6 +9,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -45,6 +46,8 @@ public class PilotMod implements
         OnPowersModifiedSubscriber,
 //        OnApplyPowerToCancelSubscriber,
         PostPowerApplySubscriber,
+        OnPlayerTurnStartPostDrawSubscriber,
+        OnStartBattleSubscriber,
         StartActSubscriber,
         StartGameSubscriber {
     public static final String MOD_ID = "pilot";
@@ -351,6 +354,22 @@ public class PilotMod implements
                 ((Pilot)AbstractDungeon.player).hasMomentum = true;
                 logger.info("Player has Momentum");
             }
+        }
+    }
+
+    @Override
+    public void receiveOnPlayerTurnStartPostDraw() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p instanceof OnPlayerTurnStartPostDrawSubscriber) {
+            ((OnPlayerTurnStartPostDrawSubscriber) p).receiveOnPlayerTurnStartPostDraw();
+        }
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p instanceof OnStartBattleSubscriber) {
+            ((OnStartBattleSubscriber) p).receiveOnBattleStart(AbstractDungeon.getCurrRoom());
         }
     }
 }

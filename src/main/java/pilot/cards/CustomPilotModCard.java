@@ -6,7 +6,6 @@ import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.megacrit.cardcrawl.actions.common.MillAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,8 +13,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pilot.PilotMod;
 import pilot.characters.Pilot;
+import pilot.patches.ArmamentFieldPatch;
 import pilot.patches.ReflexFieldPatch;
-import pilot.patches.TitanFieldPatch;
 
 import java.util.List;
 
@@ -220,7 +219,9 @@ public abstract class CustomPilotModCard extends CustomCard {
         baseBlock = realBaseBlock;
         isBlockModified = block != baseBlock;
 
-        if (TitanFieldPatch.requiresTitan.get(this) && !((Pilot)AbstractDungeon.player).hasTitan()) {
+
+        // Turns Armaments Ethereal when Titan is destroyed
+        if (ArmamentFieldPatch.isArmament.get(this) && !((Pilot)AbstractDungeon.player).hasTitan()) {
             rawDescription = "Ethereal. NL" + rawDescription;
             this.isEthereal = true;
         }
@@ -255,13 +256,7 @@ public abstract class CustomPilotModCard extends CustomCard {
         this.glowColor = shouldGlowGold() ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (TitanFieldPatch.requiresTitan.get(this)) {
-            return ((Pilot)AbstractDungeon.player).hasTitan();
-        }
-        return super.canUse(p, m);
-    }
+
 
 
 

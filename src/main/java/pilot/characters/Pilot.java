@@ -2,6 +2,7 @@ package pilot.characters;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
+import basemod.interfaces.OnStartBattleSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -10,12 +11,15 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -23,14 +27,19 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import pilot.PilotMod;
+import pilot.actions.AddToTitanDeckAction;
+import pilot.actions.DrawArmamentAction;
+import pilot.cards.pilot.Command;
 import pilot.cards.pilot.Defend;
-import pilot.cards.pilot.Pilot_Sprint;
 import pilot.cards.pilot.Strike;
-import pilot.cards.pilot.Titanfall;
+import pilot.cards.pilot.titan_deck.TitanDeck;
+import pilot.cards.pilot.titan_deck.armaments.CoverFire;
+import pilot.cards.pilot.titan_deck.armaments.Shield;
+import pilot.patches.ArmamentFieldPatch;
+import pilot.powers.ProtectPower;
 import pilot.titan.TitanOrb;
 
 import java.util.ArrayList;
@@ -44,8 +53,8 @@ import static pilot.characters.Pilot.Enums.PILOT_CARD_COLOR;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in PilotMod-Character-Strings.json in the resources
 
-public class Pilot extends CustomPlayer  {
-    public static final Logger logger = LogManager.getLogger(PilotMod.class.getName());
+public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
+    private static final int TITAN_BASE_SHIELDS = 10;
 
 
     // =============== CHARACTER ENUMERATORS =================
@@ -117,7 +126,7 @@ public class Pilot extends CustomPlayer  {
     public static final int STARTING_HP = 70;
     public static final int MAX_HP = 70;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 5;
+    public static final int CARD_DRAW = 4;
     public static final int ORB_SLOTS = 0;
 
     // =============== /BASE STATS/ =================
@@ -211,7 +220,7 @@ public class Pilot extends CustomPlayer  {
     // Starting Deck
     @Override
     public ArrayList<String> getStartingDeck() {
-        logger.info("Constructing Pilot starting deck");
+        PilotMod.logger.info("Constructing Pilot starting deck");
 
         ArrayList<String> startingDeck = new ArrayList<>();
 
@@ -225,8 +234,12 @@ public class Pilot extends CustomPlayer  {
         startingDeck.add(Defend.ID);
         startingDeck.add(Defend.ID);
 
-        startingDeck.add(Titanfall.ID);
-        startingDeck.add(Pilot_Sprint.ID);
+//        startingDeck.add(Titanfall.ID);
+        startingDeck.add(Command.ID);
+
+        startingDeck.add(CoverFire.ID);
+        startingDeck.add(Shield.ID);
+        startingDeck.add(Shield.ID);
 
         return startingDeck;
     }
@@ -373,6 +386,12 @@ public class Pilot extends CustomPlayer  {
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
+        TitanDeck.reset();
+        for (AbstractCard c : drawPile.group) {
+            if (ArmamentFieldPatch.isArmament.get(c)) {
+                AbstractDungeon.actionManager.addToBottom(new AddToTitanDeckAction(c, true));
+            }
+        }
     }
 
     @Override
@@ -427,6 +446,8 @@ public class Pilot extends CustomPlayer  {
         }
     }
 
+
+
 //    @Override
 //    public boolean onReceivePowerToCancel(AbstractPower power, AbstractCreature source) {
 //        PilotMod.logger.info("Pilot onReceivePowerToCancel called on Pilot");
@@ -445,5 +466,37 @@ public class Pilot extends CustomPlayer  {
                 cardsDrawnThisTurn = 0;
         PilotMod.logger.info("Pilot no longer has Advantage or Momentum");
 
+        if (this.hasTitan()) {
+            PilotMod.logger.info("Pilot has a Titan");
+            AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+        }
+        else {
+            PilotMod.logger.info("Pilot does not have a Titan, skipping Armament draw");
+        }
+//        TitanDeck.drawArmament(false);
+        PilotMod.logger.info("Start of turn: Armament drawn");
+
+        if (!this.hasPower(ProtectPower.POWER_ID)) {
+            PilotMod.logger.info("Start of turn: Pilot does not have Protect, giving him 1 stack");
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ProtectPower(this, 1)));
+        }
+
+
     }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        PilotMod.logger.info("Battle Start: Titan created");
+        AbstractDungeon.actionManager.addToTop(new ChannelAction(new TitanOrb(TITAN_BASE_SHIELDS)));
+        PilotMod.logger.info("Drawing Armament for 1st turn of combat");
+        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+
+    }
+
+
+//    @Override
+//    public void receiveOnPlayerTurnStartPostDraw() {
+//        TitanDeck.drawArmament();
+//        PilotMod.logger.info("Start of turn: Armament drawn");
+//    }
 }

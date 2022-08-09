@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import pilot.PilotMod;
 
 public abstract class CustomPilotModPower extends AbstractPower implements CloneablePowerInterface, CustomStackBehaviorPower {
     protected final String[] DESCRIPTIONS;
@@ -45,11 +46,14 @@ public abstract class CustomPilotModPower extends AbstractPower implements Clone
 
     @Override
     public void stackPower(AbstractPower otherPower) {
+        PilotMod.logger.info("custom Stacking called");
         this.stackPower(otherPower.amount);
 
         if (this.amount2 != -1 || this.canGoNegative2 && otherPower instanceof CustomPilotModPower) {
             this.fontScale = 8.0F;
             this.amount2 += ((CustomPilotModPower) otherPower).amount2;
+            PilotMod.logger.info("Amount2 stacked: {}", amount2);
+
         }
     }
 

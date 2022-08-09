@@ -2,13 +2,16 @@ package pilot.cards.pilot;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.actions.DeployTitanAction;
 import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.titan_deck.armaments.Chaingun;
 import pilot.characters.Pilot;
 import pilot.powers.ProtectPower;
+import pilot.titan.TitanOrb;
 
 public class Titanfall extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Titanfall.class);
@@ -34,7 +37,8 @@ public class Titanfall extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DeployTitanAction(magicNumber));
+        addToTop(new ChannelAction(new TitanOrb(magicNumber)));
+        addToBot(new DeployTitanAction());
         addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, urMagicNumber)));
         addToBot(new MakeTempCardInDrawPileAction(new Chaingun(), CHAINGUN, true, true));
     }
