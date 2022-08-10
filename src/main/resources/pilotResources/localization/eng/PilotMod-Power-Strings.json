@@ -6,6 +6,13 @@
       "The next #b%1$s times you take damage, reduce your Titan's #yShield instead."
     ]
   },
+  "pilot:ProtectThisTurnPower": {
+    "NAME": "Temporary Protect",
+    "DESCRIPTIONS": [
+      "The next time you take damage this turn, reduce your Titan's #yShield instead.",
+      "The next #b%1$s times you take damage this turn, reduce your Titan's #yShield instead."
+    ]
+  },
   "pilot:LoseProtectPower": {
     "NAME": "Lose Protect",
     "DESCRIPTIONS": [
@@ -22,6 +29,12 @@
     "NAME": "Ronin",
     "DESCRIPTIONS": [
       "When you #yDeploy your Titan, give it #b%1$s #yShields and shuffle #b%2$s LeadWall and #b%2$s Phase Dash into your draw pile."
+    ]
+  },
+  "pilot:MomentumPower": {
+    "NAME": "Momentum",
+    "DESCRIPTIONS": [
+      "Increases #yBlock gained from cards by #b%1$s. At end of turn, reduce #yMomentum by the number of cards in your hand."
     ]
   }
 }

@@ -32,13 +32,13 @@ public class Volt extends CustomPilotModCard {
 
     @Override
     public boolean shouldGlowGold() {
-        return ((Pilot) AbstractDungeon.player).hasMomentum;
+        return ((Pilot) AbstractDungeon.player).hasMomentum();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
-        if (((Pilot)p).hasMomentum) {
+        if (((Pilot)p).hasMomentum()) {
             addToBot(new GainEnergyAction(magicNumber));
         }
     }

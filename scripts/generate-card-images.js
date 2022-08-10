@@ -31,9 +31,9 @@ const cardMasksByCardType = {
   'CURSE': path.join(__dirname, 'card_masks/skill.png'),
 };
 
-const inputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/cards/originals');
-const outputDirectory = path.join(__dirname, '../src/main/resources/the_pilotResources/images/cards/generated');
-const srcDirectory = path.join(__dirname, '../src/main/java/the_pilot/cards');
+const inputDirectory = path.join(__dirname, '../src/main/resources/pilotResources/images/cards/originals');
+const outputDirectory = path.join(__dirname, '../src/main/resources/pilotResources/images/cards/generated');
+const srcDirectory = path.join(__dirname, '../src/main/java/pilot/cards');
 
 function findFilesRecursiveSync(directory, filePattern) {
   const results = [];

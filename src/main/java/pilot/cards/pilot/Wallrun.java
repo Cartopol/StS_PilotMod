@@ -4,10 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
+import pilot.powers.MomentumPower;
 
 public class Wallrun extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Wallrun.class);
@@ -19,26 +19,26 @@ public class Wallrun extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 3;
-    private static final int DEX = 1;
-    private static final int UPGRADE_PLUS_DEX = 1;
+    private static final int MOMENTUM = 3;
+    private static final int UPGRADE_PLUS_MOMENTUM = 1;
 
     public Wallrun() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = DEX;
+        magicNumber = baseMagicNumber = MOMENTUM;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, magicNumber)));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DEX);
+            upgradeMagicNumber(UPGRADE_PLUS_MOMENTUM);
             upgradeDescription();
         }
     }

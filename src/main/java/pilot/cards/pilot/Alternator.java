@@ -29,12 +29,12 @@ public class Alternator extends CustomPilotModCard {
 
     @Override
     public boolean shouldGlowGold() {
-        return ((Pilot)AbstractDungeon.player).hasMomentum;
+        return ((Pilot)AbstractDungeon.player).hasMomentum();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (((Pilot)p).hasMomentum && p.hasPower(DexterityPower.POWER_ID)) {
+        if (((Pilot)p).hasMomentum() && p.hasPower(DexterityPower.POWER_ID)) {
             this.baseDamage += p.getPower(DexterityPower.POWER_ID).amount;
         }
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));

@@ -1,4 +1,4 @@
-package pilot.cards.pilot;
+package pilot.cards.pilot.titan_deck.armaments;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
@@ -6,16 +6,18 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import pilot.PilotMod;
-import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.titan_deck.CustomTitanCard;
+import pilot.characters.Pilot;
+import pilot.patches.ArmamentFieldPatch;
 import pilot.patches.ReflexFieldPatch;
 
-public class PhaseDash extends CustomPilotModCard {
+public class PhaseDash extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(PhaseDash.class);
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
+    public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = -2;
     private static final int INTANGIBLE = 1;
@@ -27,9 +29,9 @@ public class PhaseDash extends CustomPilotModCard {
         magicNumber = baseMagicNumber = INTANGIBLE;
         metaMagicNumber = baseMetaMagicNumber = DISCARD;
         ReflexFieldPatch.hasReflex.set(this, true);
-
-        //design doc doesn't specify this as Armament
-//        ArmamentFieldPatch.isArmament.set(this, true);
+        this.exhaust = true;
+        this.isEthereal = true;
+        ArmamentFieldPatch.isArmament.set(this, true);
     }
 
     @Override

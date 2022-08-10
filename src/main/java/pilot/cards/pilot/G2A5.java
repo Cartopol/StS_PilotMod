@@ -33,14 +33,14 @@ public class G2A5 extends CustomPilotModCard {
 
     @Override
     public boolean shouldGlowGold() {
-        return ((Pilot) AbstractDungeon.player).hasAdvantage;
+        return ((Pilot) AbstractDungeon.player).hasAdvantage();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_HEAVY));
 
-       if (((Pilot)p).hasAdvantage) {
+       if (((Pilot)p).hasAdvantage()) {
             addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
         }
     }

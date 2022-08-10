@@ -10,13 +10,12 @@ import pilot.PilotMod;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
-import pilot.powers.LoseProtectPower;
-import pilot.powers.ProtectPower;
+import pilot.powers.ProtectThisTurnPower;
 
 public class Chaingun extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(Chaingun.class);
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
@@ -31,13 +30,14 @@ public class Chaingun extends CustomTitanCard {
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = PROTECT;
         ArmamentFieldPatch.isArmament.set(this, true);
+        exhaust = true;
+        isEthereal = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, PROTECT)));
-        addToBot(new ApplyPowerAction(p, p, new LoseProtectPower(p, PROTECT)));
+        addToBot(new ApplyPowerAction(p, p, new ProtectThisTurnPower(p, PROTECT)));
     }
 
     @Override

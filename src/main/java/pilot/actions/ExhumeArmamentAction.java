@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import pilot.PilotMod;
+import pilot.cards.pilot.titan_deck.armaments.Rearm;
 import pilot.patches.ArmamentFieldPatch;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class ExhumeArmamentAction extends AbstractGameAction {
                     d.stopGlowing();
                     d.unhover();
                     d.unfadeOut();
-                    if (!ArmamentFieldPatch.isArmament.get(d)) {
+                    if (!ArmamentFieldPatch.isArmament.get(d) || d.name.equals(Rearm.ID)) {
                         cardsToRemove.add(d);
                         this.exhumes.add(d);
                     }

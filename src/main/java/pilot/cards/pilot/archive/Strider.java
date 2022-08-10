@@ -1,17 +1,18 @@
-package pilot.cards.pilot;
+package pilot.cards.pilot.archive;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.titan_deck.armaments.Pilot_Dash;
 import pilot.characters.Pilot;
 import pilot.powers.StriderPower;
 
 public class Strider extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Strider.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;

@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
-import pilot.powers.LoseProtectPower;
-import pilot.powers.ProtectPower;
+import pilot.powers.ProtectThisTurnPower;
 
 public class Embark extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Embark.class);
@@ -18,7 +17,7 @@ public class Embark extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int PROTECT = 1;
+    private static final int PROTECT = 3;
     private static final int UPGRADE_COST = 0;
 
     public Embark() {
@@ -28,8 +27,7 @@ public class Embark extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, magicNumber)));
-        addToBot(new ApplyPowerAction(p, p, new LoseProtectPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ProtectThisTurnPower(p, magicNumber)));
     }
 
     @Override

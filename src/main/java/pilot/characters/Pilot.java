@@ -39,6 +39,7 @@ import pilot.cards.pilot.titan_deck.TitanDeck;
 import pilot.cards.pilot.titan_deck.armaments.CoverFire;
 import pilot.cards.pilot.titan_deck.armaments.Shield;
 import pilot.patches.ArmamentFieldPatch;
+import pilot.powers.MomentumPower;
 import pilot.powers.ProtectPower;
 import pilot.titan.TitanOrb;
 
@@ -55,6 +56,7 @@ import static pilot.characters.Pilot.Enums.PILOT_CARD_COLOR;
 
 public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
     private static final int TITAN_BASE_SHIELDS = 10;
+    private static final int ADVANTAGE_THRESHOLD = 5;
 
 
     // =============== CHARACTER ENUMERATORS =================
@@ -115,9 +117,6 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
 
     // =============== CHARACTER ENUMERATORS  =================
 
-    public boolean hasAdvantage = false;
-    public int cardsDrawnThisTurn = 0;
-    public boolean hasMomentum = false;
 
 
     // =============== BASE STATS =================
@@ -436,34 +435,21 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
         } return null;
     }
 
-    @Override
-    public void draw(int numCards) {
-        super.draw(numCards);
-        cardsDrawnThisTurn += 1;
-        if (cardsDrawnThisTurn > 5) {
-            hasAdvantage = true;
-            PilotMod.logger.info("Pilot has Advantage");
-        }
+    public boolean hasAdvantage() {
+        boolean hasAdvantage = this.hand.size() > ADVANTAGE_THRESHOLD;
+        PilotMod.logger.info("Pilot has Advantage: {}", hasAdvantage);
+        return hasAdvantage;
     }
 
-
-
-//    @Override
-//    public boolean onReceivePowerToCancel(AbstractPower power, AbstractCreature source) {
-//        PilotMod.logger.info("Pilot onReceivePowerToCancel called on Pilot");
-//        if (power instanceof DexterityPower) {
-//            hasMomentum = true;
-//            PilotMod.logger.info("Pilot has Momentum");
-//        }
-//        return false;
-//    }
+    public boolean hasMomentum() {
+        boolean hasMomentum = this.hasPower(MomentumPower.POWER_ID);
+        PilotMod.logger.info("Pilot has Momentum: {}", hasMomentum);
+        return hasMomentum;
+    }
 
     @Override
     public void applyStartOfTurnPostDrawRelics() {
         super.applyStartOfTurnPostDrawRelics();
-        hasMomentum = false;
-        hasAdvantage = false;
-                cardsDrawnThisTurn = 0;
         PilotMod.logger.info("Pilot no longer has Advantage or Momentum");
 
         if (this.hasTitan()) {
@@ -473,7 +459,6 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
         else {
             PilotMod.logger.info("Pilot does not have a Titan, skipping Armament draw");
         }
-//        TitanDeck.drawArmament(false);
         PilotMod.logger.info("Start of turn: Armament drawn");
 
         if (!this.hasPower(ProtectPower.POWER_ID)) {
@@ -492,11 +477,4 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
         AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
 
     }
-
-
-//    @Override
-//    public void receiveOnPlayerTurnStartPostDraw() {
-//        TitanDeck.drawArmament();
-//        PilotMod.logger.info("Start of turn: Armament drawn");
-//    }
 }

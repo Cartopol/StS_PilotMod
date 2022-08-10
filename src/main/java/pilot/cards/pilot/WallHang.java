@@ -19,26 +19,26 @@ public class WallHang extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int BLOCK = 4;
-    private static final int DEX = 1;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 6;
+    private static final int DEX_LOSS = 1;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public WallHang() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        magicNumber = baseMagicNumber = DEX;
+        magicNumber = baseMagicNumber = DEX_LOSS;
     }
 
     @Override
     public boolean shouldGlowGold() {
-        return ((Pilot)AbstractDungeon.player).hasAdvantage;
+        return ((Pilot)AbstractDungeon.player).hasAdvantage();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
-        if (((Pilot)p).hasAdvantage) {
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+        if (!((Pilot)p).hasAdvantage()) {
+            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -magicNumber)));
         }
     }
 

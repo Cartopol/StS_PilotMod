@@ -29,6 +29,7 @@ public class BunnyHop extends CustomPilotModCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         ReflexFieldPatch.hasReflex.set(this, true);
         magicNumber = baseMagicNumber = DEX;
+        exhaust = true;
     }
 
 //    @Override
@@ -43,7 +44,7 @@ public class BunnyHop extends CustomPilotModCard {
         if (upgraded) {
             addToBot(new DrawCardAction(DRAW));
         }
-        if (((Pilot)p).hasAdvantage) {
+        if (((Pilot)p).hasAdvantage()) {
             addToBot(new GainEnergyAction(ENERGY));
         }
     }

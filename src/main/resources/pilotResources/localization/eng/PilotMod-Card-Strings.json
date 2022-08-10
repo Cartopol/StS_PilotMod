@@ -19,7 +19,7 @@
   },
   "pilot:Chaingun": {
     "NAME": "X016A2 Chaingun",
-    "DESCRIPTION": "Titan. NL Deal !D! damage. NL Gain !M! pilot:Protect this turn."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Gain !M! pilot:Protect this turn."
   },
   "pilot:Kick": {
     "NAME": "Kick",
@@ -51,7 +51,7 @@
   },
   "pilot:Wallrun": {
     "NAME": "Wallrun",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Dexterity."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! pilot:Momentum."
   },
   "pilot:Alternator": {
     "NAME": "Alternator",
@@ -72,7 +72,7 @@
   },
   "pilot:WallHang": {
     "NAME": "Wall Hang",
-    "DESCRIPTION": "Gain !B! Block. NL If you have pilot:Advantage, lose !M! Dexterity."
+    "DESCRIPTION": "Gain !B! Block. NL If you do not have pilot:Advantage, lose !M! Dexterity."
   },
   "pilot:Airstrafe": {
     "NAME": "Airstrafe",
@@ -84,8 +84,8 @@
   },
   "pilot:BunnyHop": {
     "NAME": "Bunny Hop",
-    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity. NL If you have pilot:Advantage, gain [E] .",
-    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity and draw a card. NL If you have pilot:Advantage, gain [E] ."
+    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity. NL If you have pilot:Advantage, gain [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity and draw a card. NL If you have pilot:Advantage, gain [E] . NL Exhaust."
   },
   "pilot:Strider": {
     "NAME": "Strider",
@@ -98,8 +98,8 @@
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:metaMagic! cards.",
-    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:metaMagic! card."
+    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
   },
   "pilot:Ronin": {
     "NAME": "Ronin",
@@ -111,7 +111,7 @@
   },
   "pilot:Shield": {
     "NAME": "Shield",
-    "DESCRIPTION": " pilot:Armament. NL Gain !B! Block. NL Gain !M! pilot:Protect this turn."
+    "DESCRIPTION": " pilot:Armament. NL Gain !pilot:MetaMagic! pilot:Shields. NL Gain !M! pilot:Protect this turn."
   },
   "pilot:Rearm": {
     "NAME": "Rearm",

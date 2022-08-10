@@ -16,7 +16,8 @@ public class BatteryBackUp extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int SHIELDS = 13;
+    private static final int SHIELDS = 5;
+    private static final int UPGRADE_PLUS_SHIELDS = 3;
 
     public BatteryBackUp() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +42,7 @@ public class BatteryBackUp extends CustomPilotModCard {
         if (!upgraded) {
             upgradeName();
             upgradeDescription();
+            upgradeMagicNumber(UPGRADE_PLUS_SHIELDS);
             this.selfRetain = true;
         }
     }

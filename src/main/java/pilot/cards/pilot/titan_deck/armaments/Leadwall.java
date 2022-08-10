@@ -16,7 +16,7 @@ import pilot.patches.ArmamentFieldPatch;
 public class Leadwall extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(Leadwall.class);
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
@@ -33,6 +33,8 @@ public class Leadwall extends CustomTitanCard {
         baseBlock = BLOCK;
         magicNumber = baseMagicNumber = DEX;
         ArmamentFieldPatch.isArmament.set(this, true);
+        exhaust = true;
+        isEthereal = true;
     }
 
     @Override

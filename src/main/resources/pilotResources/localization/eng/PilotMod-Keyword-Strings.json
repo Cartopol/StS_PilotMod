@@ -14,11 +14,11 @@
   },
   {
     "NAMES": ["advantage", "advantaged"],
-    "DESCRIPTION": "You have Advantage if you have drawn any cards since the start of your turn."
+    "DESCRIPTION": "You have Advantage if you have more than 5 cards in hand."
   },
   {
     "NAMES": ["momentum"],
-    "DESCRIPTION": "You have Momentum if you have gained Dexterity this turn."
+    "DESCRIPTION": "Momentum improves Block gained from cards. At end of turn, it is reduced by the number of cards in your hand."
   },
   {
     "NAMES": ["armament", "armaments"],
