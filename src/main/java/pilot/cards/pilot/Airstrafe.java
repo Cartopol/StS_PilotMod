@@ -4,10 +4,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
+import pilot.powers.MomentumPower;
 
 public class Airstrafe extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Airstrafe.class);
@@ -27,9 +27,9 @@ public class Airstrafe extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(DexterityPower.POWER_ID)) {
-            AbstractPower dexPower = p.getPower(DexterityPower.POWER_ID);
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, dexPower.amount)));
+        if (p.hasPower(MomentumPower.POWER_ID)) {
+            AbstractPower momentumPower = p.getPower(MomentumPower.POWER_ID);
+            addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, momentumPower.amount)));
         }
     }
 

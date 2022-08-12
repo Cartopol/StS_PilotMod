@@ -19,7 +19,7 @@ public class Wallrun extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 3;
-    private static final int MOMENTUM = 3;
+    private static final int MOMENTUM = 1;
     private static final int UPGRADE_PLUS_MOMENTUM = 1;
 
     public Wallrun() {

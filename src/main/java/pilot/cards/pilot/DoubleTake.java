@@ -14,13 +14,13 @@ import pilot.characters.Pilot;
 public class DoubleTake extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(DoubleTake.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int COST = 2;
+    private static final int DAMAGE = 12;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int ENERGY = 1;
 

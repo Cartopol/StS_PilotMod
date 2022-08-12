@@ -11,7 +11,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -32,6 +31,8 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import pilot.PilotMod;
 import pilot.actions.AddToTitanDeckAction;
 import pilot.actions.DrawArmamentAction;
+import pilot.actions.StartCountingReflexDrawsAction;
+import pilot.cards.OnDrawCardSubscriber;
 import pilot.cards.pilot.Command;
 import pilot.cards.pilot.Defend;
 import pilot.cards.pilot.Strike;
@@ -40,7 +41,6 @@ import pilot.cards.pilot.titan_deck.armaments.CoverFire;
 import pilot.cards.pilot.titan_deck.armaments.Shield;
 import pilot.patches.ArmamentFieldPatch;
 import pilot.powers.MomentumPower;
-import pilot.powers.ProtectPower;
 import pilot.titan.TitanOrb;
 
 import java.util.ArrayList;
@@ -54,9 +54,10 @@ import static pilot.characters.Pilot.Enums.PILOT_CARD_COLOR;
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in PilotMod-Character-Strings.json in the resources
 
-public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
+public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDrawCardSubscriber {
     private static final int TITAN_BASE_SHIELDS = 10;
     private static final int ADVANTAGE_THRESHOLD = 5;
+    public boolean startCounting;
 
 
     // =============== CHARACTER ENUMERATORS =================
@@ -117,7 +118,7 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
 
     // =============== CHARACTER ENUMERATORS  =================
 
-
+    public int cardsDrawnAfterStartOfTurn = 0;
 
     // =============== BASE STATS =================
 
@@ -436,38 +437,58 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
     }
 
     public boolean hasAdvantage() {
-        boolean hasAdvantage = this.hand.size() > ADVANTAGE_THRESHOLD;
-        PilotMod.logger.info("Pilot has Advantage: {}", hasAdvantage);
+        boolean hasAdvantage = this.hand.size() >= ADVANTAGE_THRESHOLD;
         return hasAdvantage;
     }
 
     public boolean hasMomentum() {
         boolean hasMomentum = this.hasPower(MomentumPower.POWER_ID);
-        PilotMod.logger.info("Pilot has Momentum: {}", hasMomentum);
         return hasMomentum;
+    }
+
+    // Checks if the player has drawn since the start of turn
+    public boolean isReflexed() {
+        boolean isReflexed = cardsDrawnAfterStartOfTurn > 0;
+        PilotMod.logger.info("Pilot is Reflexed: {}", isReflexed);
+        return isReflexed;
     }
 
     @Override
     public void applyStartOfTurnPostDrawRelics() {
         super.applyStartOfTurnPostDrawRelics();
-        PilotMod.logger.info("Pilot no longer has Advantage or Momentum");
 
         if (this.hasTitan()) {
-            PilotMod.logger.info("Pilot has a Titan");
             AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
         }
         else {
             PilotMod.logger.info("Pilot does not have a Titan, skipping Armament draw");
         }
-        PilotMod.logger.info("Start of turn: Armament drawn");
 
-        if (!this.hasPower(ProtectPower.POWER_ID)) {
-            PilotMod.logger.info("Start of turn: Pilot does not have Protect, giving him 1 stack");
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ProtectPower(this, 1)));
-        }
+        AbstractDungeon.actionManager.addToBottom(new StartCountingReflexDrawsAction(this));
+
+//        cardsDrawnAfterStartOfTurn = 0;
+//        startCounting = true;
+//        PilotMod.logger.info("Start counting card draws for Reflex");
+//        PilotMod.logger.info("Cards drawn since turn start reset to 0");
 
 
+        // This gives the Titan 1 Protect stack at the start of turn if it doesn't have it yet.
+//        if (!this.hasPower(ProtectPower.POWER_ID)) {
+//            PilotMod.logger.info("Start of turn: Pilot does not have Protect, giving him 1 stack");
+//            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ProtectPower(this, 1)));
+//        }
     }
+
+
+//    @Override
+//    public void applyStartOfTurnPostDrawPowers() {
+//        super.applyStartOfTurnPostDrawPowers();
+//        cardsDrawnAfterStartOfTurn = 0;
+//        startCounting = true;
+//        PilotMod.logger.info("Start counting card draws for Reflex");
+//        PilotMod.logger.info("Cards drawn since turn start reset to 0");
+//
+//    }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
@@ -475,6 +496,29 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber {
         AbstractDungeon.actionManager.addToTop(new ChannelAction(new TitanOrb(TITAN_BASE_SHIELDS)));
         PilotMod.logger.info("Drawing Armament for 1st turn of combat");
         AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+        cardsDrawnAfterStartOfTurn = 0;
+        startCounting = false;
 
     }
+
+
+    @Override
+    public void applyStartOfTurnPreDrawCards() {
+        startCounting = false;
+        cardsDrawnAfterStartOfTurn = 0;
+        PilotMod.logger.info("Stop counting card draws for Reflex");
+        super.applyStartOfTurnPreDrawCards();
+    }
+
+    @Override
+    public void onDraw() {
+        if (startCounting) {
+            cardsDrawnAfterStartOfTurn++;
+            PilotMod.logger.info("Cards drawn since turn start: {} ", cardsDrawnAfterStartOfTurn);
+        }
+    }
+
+
+
+
 }

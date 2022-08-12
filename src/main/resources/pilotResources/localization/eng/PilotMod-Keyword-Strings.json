@@ -26,7 +26,7 @@
   },
   {
     "NAMES": ["reflex"],
-    "DESCRIPTION": "When drawn, play this card automatically and discard the top card from your Draw Pile."
+    "DESCRIPTION": "When drawn during your turn, reduce the cost of this card by 1."
   },
   {
     "NAMES": ["engage", "engaged"],

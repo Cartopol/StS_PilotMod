@@ -10,7 +10,7 @@ import pilot.PilotMod;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
-import pilot.powers.ProtectThisTurnPower;
+import pilot.powers.ProtectPower;
 
 public class Chaingun extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(Chaingun.class);
@@ -37,7 +37,7 @@ public class Chaingun extends CustomTitanCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyPowerAction(p, p, new ProtectThisTurnPower(p, PROTECT)));
+        addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, PROTECT)));
     }
 
     @Override

@@ -32,11 +32,11 @@ public class MomentumPower extends CustomPilotModPower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             AbstractPlayer p = AbstractDungeon.player;
-            long reduceBy = p.hand.group.stream()
-                    .filter(c -> !c.isEthereal)
-                    .count();
-            addToBot(new ReducePowerAction(p, p, this, (int)reduceBy));
-            PilotMod.logger.info("Reduced Momentum by {}", (int)reduceBy);
+            int reduceBy = p.hand.group.size();
+            if (reduceBy != 0) {
+                addToBot(new ReducePowerAction(p, p, this, reduceBy));
+                PilotMod.logger.info("Reduced Momentum by {}", reduceBy);
+            }
         }
         super.atEndOfTurn(isPlayer);
     }

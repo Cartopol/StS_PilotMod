@@ -19,7 +19,7 @@ public class PhaseDash extends CustomTitanCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = -2;
+    private static final int COST = 1;
     private static final int INTANGIBLE = 1;
     private static final int DISCARD = 2;
     private static final int UPGRADE_PLUS_DISCARD = -1;

@@ -3,8 +3,7 @@ package pilot.cards;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.evacipated.cardcrawl.mod.stslib.StSLib;
-import com.megacrit.cardcrawl.actions.common.MillAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -48,8 +47,8 @@ public abstract class CustomPilotModCard extends CustomCard {
     private String rawDynamicDescriptionSuffix = "";
 
     public static final Logger logger = LogManager.getLogger(PilotMod.class.getName());
+    private boolean isDrawnBeforePlayingOtherCards;
 
-    public boolean isReflexCard = false;
 
 
     private static String imgFromId(String id) {
@@ -222,7 +221,6 @@ public abstract class CustomPilotModCard extends CustomCard {
 
         // Turns Armaments Ethereal when Titan is destroyed
         if (ArmamentFieldPatch.isArmament.get(this) && !((Pilot)AbstractDungeon.player).hasTitan()) {
-            rawDescription = "Ethereal. NL" + rawDescription;
             this.isEthereal = true;
         }
 
@@ -242,6 +240,8 @@ public abstract class CustomPilotModCard extends CustomCard {
         energyOnUse = -1;
         setRawDynamicDescriptionSuffix("");
     }
+
+
 
     public void onMoveToDiscardImpl() { }
     public void atStartOfAct() { }
@@ -264,9 +264,19 @@ public abstract class CustomPilotModCard extends CustomCard {
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
         if (ReflexFieldPatch.hasReflex.get(this)) {
-            AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(this, true, true, true));
-            AbstractDungeon.actionManager.addToBottom(new MillAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+            if (((Pilot)AbstractDungeon.player).isReflexed()) {
+                addToBot(new ReduceCostAction(this.uuid, 1));
+                PilotMod.logger.info("Reflex card reduced by 1");
+            }
+
+//            AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(this, true, true, true));
+//            AbstractDungeon.actionManager.addToBottom(new MillAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
+    }
+
+    @Override
+    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        super.onPlayCard(c, m);
     }
 
     @Override
@@ -280,7 +290,9 @@ public abstract class CustomPilotModCard extends CustomCard {
         return isEngaging;
     }
 
+    @Override
+    public void atTurnStart() {
+        super.atTurnStart();
 
-
-
+    }
 }

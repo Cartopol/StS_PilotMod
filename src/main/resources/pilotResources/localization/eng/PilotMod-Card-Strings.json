@@ -9,8 +9,8 @@
   },
   "pilot:Pilot_Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! Dexterity. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! Dexterity."
+    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum."
   },
   "pilot:Titanfall": {
     "NAME": "Titanfall",
@@ -19,7 +19,7 @@
   },
   "pilot:Chaingun": {
     "NAME": "X016A2 Chaingun",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Gain !M! pilot:Protect this turn."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Gain !M! pilot:Protect."
   },
   "pilot:Kick": {
     "NAME": "Kick",
@@ -27,7 +27,7 @@
   },
   "pilot:Carbine": {
     "NAME": "R-201 Carbine",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Dexterity."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! pilot:Momentum."
   },
   "pilot:Flatline": {
     "NAME": "Flatline",
@@ -47,7 +47,7 @@
   },
   "pilot:G2A5": {
     "NAME": "G2A5",
-    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Advantage, gain !M! Dexterity."
+    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Advantage, gain !M! pilot:Momentum."
   },
   "pilot:Wallrun": {
     "NAME": "Wallrun",
@@ -55,15 +55,15 @@
   },
   "pilot:Alternator": {
     "NAME": "Alternator",
-    "DESCRIPTION": "Deal !D! damage to a random enemy twice. NL If you have pilot:Momentum, Dexterity increases this damage."
+    "DESCRIPTION": "Deal !D! damage to a random enemy twice. pilot:Momentum increases this damage."
   },
   "pilot:CAR": {
     "NAME": "CAR",
-    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Momentum, Dexterity increases this damage."
+    "DESCRIPTION": "Deal !D! damage. pilot:Momentum increases this damage."
   },
   "pilot:Embark": {
     "NAME": "Embark",
-    "DESCRIPTION": "Gain !M! pilot:Protect this turn."
+    "DESCRIPTION": "Gain !M! pilot:Protect."
   },
   "pilot:BatteryBackUp": {
     "NAME": "Battery Back-up",
@@ -76,16 +76,16 @@
   },
   "pilot:Airstrafe": {
     "NAME": "Airstrafe",
-    "DESCRIPTION": "Double your Dexterity. NL Exhaust."
+    "DESCRIPTION": "Double your pilot:Momentum. NL Exhaust."
   },
   "pilot:Pilot_Dash": {
     "NAME": "Dash",
-    "DESCRIPTION": " pilot:Armament. pilot:Reflex. NL Gain !B! Block. NL Gain !M! Dexterity."
+    "DESCRIPTION": " pilot:Armament. pilot:Reflex. NL Gain !B! Block. NL Gain !M! pilot:Momentum."
   },
   "pilot:BunnyHop": {
     "NAME": "Bunny Hop",
-    "DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity. NL If you have pilot:Advantage, gain [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! Dexterity and draw a card. NL If you have pilot:Advantage, gain [E] . NL Exhaust."
+    "DESCRIPTION": " pilot:Reflex. NL Gain !M! pilot:Momentum. NL If you have pilot:Advantage, gain [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": " pilot:Reflex. NL Gain !M! pilot:Momentum and draw a card. NL If you have pilot:Advantage, gain [E] . NL Exhaust."
   },
   "pilot:Strider": {
     "NAME": "Strider",
@@ -94,7 +94,7 @@
   },
   "pilot:Leadwall": {
     "NAME": "Leadwall",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL If you are engaging, gain !B! Block and !M! Dexterity."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL If you are engaging, gain !B! Block and !M! pilot:Momentum."
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
@@ -111,7 +111,7 @@
   },
   "pilot:Shield": {
     "NAME": "Shield",
-    "DESCRIPTION": " pilot:Armament. NL Gain !pilot:MetaMagic! pilot:Shields. NL Gain !M! pilot:Protect this turn."
+    "DESCRIPTION": " pilot:Armament. NL Gain !pilot:MetaMagic! pilot:Shields. NL Gain !M! pilot:Protect."
   },
   "pilot:Rearm": {
     "NAME": "Rearm",
@@ -121,5 +121,19 @@
     "NAME": "Command",
     "DESCRIPTION": "Draw !M! pilot:Armament. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Draw !M! pilot:Armament."
+  },
+  "pilot:Slide": {
+    "NAME": "Slide",
+    "DESCRIPTION": "Draw !M! cards. NL Gain 1 pilot:Momentum for each card played this turn."
+  },
+  "pilot:Throw": {
+    "NAME": "Throw",
+    "DESCRIPTION": " pilot:Armament. NL Gain !M! pilot:Momentum. NL Draw !pilot:MetaMagic! card.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. NL Gain !M! pilot:Momentum. NL Draw !pilot:MetaMagic! cards."
+  },
+  "pilot:SmokeBomb": {
+    "NAME": "Smoke Bomb",
+    "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed."
   }
 }

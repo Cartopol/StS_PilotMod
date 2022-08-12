@@ -23,6 +23,9 @@ public class OnDrawCardSubscriberPatch {
             if (c instanceof OnDrawCardSubscriber) {
                 ((OnDrawCardSubscriber)c).onDraw();
             }
+            if (__this instanceof OnDrawCardSubscriber) {
+                ((OnDrawCardSubscriber) __this).onDraw();
+            }
         }
 
         private static class Locator extends SpireInsertLocator {

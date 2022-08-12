@@ -7,10 +7,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
+import pilot.powers.MomentumPower;
 
 public class G2A5 extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(G2A5.class);
@@ -20,15 +20,15 @@ public class G2A5 extends CustomPilotModCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int COST = 2;
+    private static final int DAMAGE = 14;
     private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int DEX = 1;
+    private static final int MOMENTUM = 2;
 
     public G2A5() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = DEX;
+        magicNumber = baseMagicNumber = MOMENTUM;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class G2A5 extends CustomPilotModCard {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_HEAVY));
 
        if (((Pilot)p).hasAdvantage()) {
-            addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber)));
+            addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, magicNumber)));
         }
     }
 

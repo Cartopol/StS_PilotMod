@@ -20,6 +20,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.clapper.util.classutil.RegexClassFilter;
 import pilot.cards.CustomPilotModCard;
+import pilot.cards.OnDrawCardSubscriber;
 import pilot.characters.Pilot;
 import pilot.relics.CustomPilotModRelic;
 import pilot.util.ReflectionUtils;
@@ -46,7 +47,9 @@ public class PilotMod implements
         OnPlayerTurnStartPostDrawSubscriber,
         OnStartBattleSubscriber,
         StartActSubscriber,
-        StartGameSubscriber {
+        StartGameSubscriber,
+        OnDrawCardSubscriber
+        {
     public static final String MOD_ID = "pilot";
 
     public static final Logger logger = LogManager.getLogger(PilotMod.class.getName());
@@ -357,4 +360,15 @@ public class PilotMod implements
             ((OnStartBattleSubscriber) p).receiveOnBattleStart(AbstractDungeon.getCurrRoom());
         }
     }
+
+    @Override
+    public void onDraw() {
+        PilotMod.logger.info("OnDraw called");
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p instanceof OnDrawCardSubscriber) {
+            ((OnDrawCardSubscriber)p).onDraw();
+        }
+    }
+
+
 }

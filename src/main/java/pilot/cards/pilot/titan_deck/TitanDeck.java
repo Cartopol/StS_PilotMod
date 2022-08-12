@@ -35,6 +35,10 @@ public class TitanDeck {
             if (c instanceof OnDrawCardSubscriber) {
                 ((OnDrawCardSubscriber) c).onDraw();
             }
+            if (AbstractDungeon.player instanceof OnDrawCardSubscriber) {
+                ((OnDrawCardSubscriber)AbstractDungeon.player).onDraw();
+            }
+            c.triggerWhenDrawn();
 
 
         }

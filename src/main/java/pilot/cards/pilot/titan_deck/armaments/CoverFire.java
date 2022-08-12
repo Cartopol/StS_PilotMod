@@ -21,7 +21,7 @@ public class CoverFire extends CustomTitanCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int DAMAGE = 8;
     private static final int WEAK = 1;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_WEAK = 1;

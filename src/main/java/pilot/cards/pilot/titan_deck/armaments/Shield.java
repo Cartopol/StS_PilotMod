@@ -8,7 +8,7 @@ import pilot.actions.IncreaseShieldsAction;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
-import pilot.powers.ProtectThisTurnPower;
+import pilot.powers.ProtectPower;
 
 public class Shield extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(Shield.class);
@@ -35,7 +35,7 @@ public class Shield extends CustomTitanCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new IncreaseShieldsAction(metaMagicNumber));
-        addToBot(new ApplyPowerAction(p, p, new ProtectThisTurnPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new ProtectPower(p, magicNumber)));
     }
 
     @Override

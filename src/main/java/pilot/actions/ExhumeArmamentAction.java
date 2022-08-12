@@ -38,7 +38,7 @@ public class ExhumeArmamentAction extends AbstractGameAction {
             ArrayList<AbstractCard> TitanCardsInExhaustPile = new ArrayList<>();
             for (AbstractCard d : AbstractDungeon.player.exhaustPile.group) {
                 // remove all cards from the the exhaust pile that are not Armaments
-                if (ArmamentFieldPatch.isArmament.get(d)) {
+                if (ArmamentFieldPatch.isArmament.get(d) || d.name.equals(Rearm.ID)) {
                     TitanCardsInExhaustPile.add(d);
                 }
             }
