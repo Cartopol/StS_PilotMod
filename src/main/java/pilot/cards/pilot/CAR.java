@@ -51,6 +51,9 @@ public class CAR extends CustomPilotModCard {
             this.baseDamage += p.getPower(MomentumPower.POWER_ID).amount;
         }
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
+       if (((Pilot)p).hasMomentum() && p.hasPower(MomentumPower.POWER_ID)) {
+           this.baseDamage -= p.getPower(MomentumPower.POWER_ID).amount;
+       }
     }
 
     @Override

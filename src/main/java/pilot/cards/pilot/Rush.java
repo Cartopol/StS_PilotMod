@@ -1,16 +1,16 @@
 package pilot.cards.pilot;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.tempCards.Mastiff;
 import pilot.characters.Pilot;
-import pilot.powers.MomentumPower;
 
-public class Airstrafe extends CustomPilotModCard {
-    public static final String ID = PilotMod.makeID(Airstrafe.class);
+public class Rush extends CustomPilotModCard{
+    public static final String ID = PilotMod.makeID(Rush.class);
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -18,27 +18,25 @@ public class Airstrafe extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
+    private static final int DISCARD = 1;
+    private static final int UPGRADE_COST = 0;
 
-    public Airstrafe() {
+    public Rush() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+        magicNumber = baseMagicNumber = DISCARD;
+        this.cardsToPreview = new Mastiff();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(MomentumPower.POWER_ID)) {
-            AbstractPower momentumPower = p.getPower(MomentumPower.POWER_ID);
-            addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, momentumPower.amount)));
-        }
+        addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeStatEquivalentCopy(), 1));
+        addToBot(new DiscardAction(p, p, magicNumber, false));
     }
 
-    @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
-            upgradeDescription();
+            upgradeBaseCost(UPGRADE_COST);
         }
     }
 }

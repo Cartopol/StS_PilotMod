@@ -25,6 +25,10 @@
     "NAME": "Kick",
     "DESCRIPTION": " pilot:Reflex. NL Deal !D! damage. NL Draw !M! card."
   },
+  "pilot:Mozambique": {
+    "NAME": "Mozambique",
+    "DESCRIPTION": "Reflex. NL Deal !D! damage and apply !M! Vulnerable."
+  },
   "pilot:Carbine": {
     "NAME": "R-201 Carbine",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! pilot:Momentum."
@@ -135,5 +139,13 @@
     "NAME": "Smoke Bomb",
     "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed.",
     "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed."
+  },
+  "pilot:Rush": {
+    "NAME": "Rush",
+    "DESCRIPTION": " Discard !M! card. NL Add 1 Mastiff to your hand."
+  },
+  "pilot:Mastiff": {
+    "NAME": "Mastiff",
+    "DESCRIPTION": " Deal !D! Damage and gain !M! Momentum. NL Advantage: Double the damage dealt."
   }
 }

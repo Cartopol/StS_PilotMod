@@ -18,17 +18,17 @@
             You need to set a STEAMAPPS_PATH environment variable to enable Maven to find the dependencies.
             See README.md (the "How to build from source" section) for details.
         -->
-        <steamappsPath>${env.STEAMAPPS_PATH}</steamappsPath>
+        <steamappsPath>"/Users/micah/Library/Application Support/Steam/steamapps"</steamappsPath>
 
         <!--
             If you're using a Steam install of Slay the Spire, you shouldn't need to modify these.
             If you're using a non-steam-based install, override these during mvn build using -D parameters.
         -->
-        <SlayTheSpire.mod_folder>${steamappsPath}/common/SlayTheSpire/mods</SlayTheSpire.mod_folder>
-        <SlayTheSpire.jar>${steamappsPath}/common/SlayTheSpire/desktop-1.0.jar</SlayTheSpire.jar>
-        <ModTheSpire.jar>${steamappsPath}/workshop/content/646570/1605060445/ModTheSpire.jar</ModTheSpire.jar>
-        <BaseMod.jar>${steamappsPath}/workshop/content/646570/1605833019/BaseMod.jar</BaseMod.jar>
-        <StSLib.jar>${steamappsPath}/workshop/content/646570/1609158507/StSLib.jar</StSLib.jar>
+        <SlayTheSpire.mod_folder>"./Users/micah/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/mods"</SlayTheSpire.mod_folder>
+        <SlayTheSpire.jar>"./Users/micah/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar"</SlayTheSpire.jar>
+        <ModTheSpire.jar>/Users/micah/Library/Application Support/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar</ModTheSpire.jar>
+        <BaseMod.jar>/Users/micah/Library/Application Support/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar</BaseMod.jar>
+        <StSLib.jar>/Users/micah/Library/Application Support/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar</StSLib.jar>
     </properties>
 
     <profiles>
@@ -40,8 +40,8 @@
                 </os>
             </activation>
             <properties>
-                <SlayTheSpire.mod_folder>${steamappsPath}/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/mods</SlayTheSpire.mod_folder>
-                <SlayTheSpire.jar>${steamappsPath}/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar</SlayTheSpire.jar>
+                <SlayTheSpire.mod_folder>/Users/micah/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/mods</SlayTheSpire.mod_folder>
+                <SlayTheSpire.jar>/Users/micah/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar</SlayTheSpire.jar>
             </properties>
         </profile>
     </profiles>
@@ -52,7 +52,7 @@
             <artifactId>slaythespire</artifactId>
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>${SlayTheSpire.jar}</systemPath>
+            <systemPath>/Users/micah/Library/Application Support/Steam/steamapps/common/SlayTheSpire/SlayTheSpire.app/Contents/Resources/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
