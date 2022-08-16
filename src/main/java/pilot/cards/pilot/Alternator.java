@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
+import pilot.powers.MomentumPower;
 
 public class Alternator extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Alternator.class);
@@ -21,15 +22,27 @@ public class Alternator extends CustomPilotModCard {
     private static final int COST = 1;
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE_PER_MOMENTUM = 1;
 
     public Alternator() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = DAMAGE_PER_MOMENTUM;
     }
 
     @Override
     public boolean shouldGlowGold() {
         return ((Pilot)AbstractDungeon.player).hasMomentum();
+    }
+
+    @Override
+    protected int calculateBonusBaseDamage() {
+        AbstractPlayer p = AbstractDungeon.player;
+        int bonusDamage = 0;
+        if (p.hasPower(MomentumPower.POWER_ID)) {
+            bonusDamage = p.getPower(MomentumPower.POWER_ID).amount * magicNumber;
+        }
+        return bonusDamage;
     }
 
     @Override

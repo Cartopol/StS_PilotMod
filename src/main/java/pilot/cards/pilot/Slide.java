@@ -25,6 +25,7 @@ public class Slide extends CustomPilotModCard {
     public Slide() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DRAW;
+        isEthereal = true;
     }
 
     @Override

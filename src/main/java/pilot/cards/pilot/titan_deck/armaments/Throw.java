@@ -13,13 +13,13 @@ import pilot.powers.MomentumPower;
 public class Throw extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(Throw.class);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int MOMENTUM = 2;
+    private static final int MOMENTUM = 1;
     private static final int DRAW = 1;
     private static final int UPGRADE_PLUS_DRAW = 1;
 

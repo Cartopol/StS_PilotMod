@@ -124,7 +124,7 @@
   },
   "pilot:Slide": {
     "NAME": "Slide",
-    "DESCRIPTION": "Draw !M! cards. NL Gain 1 pilot:Momentum for each card played this turn."
+    "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL Gain 1 pilot:Momentum for each card played this turn."
   },
   "pilot:Throw": {
     "NAME": "Throw",
