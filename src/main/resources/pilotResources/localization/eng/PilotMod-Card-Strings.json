@@ -135,5 +135,22 @@
     "NAME": "Smoke Bomb",
     "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed.",
     "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed."
+  },
+  "pilot:Protocol3": {
+    "NAME": "Protocol 3",
+    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, gain !M! pilot:Protect."
+  },
+  "pilot:AdvancedAutoTitan": {
+    "NAME": "Advanced Auto Titan",
+    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, draw !M! pilot:Armament."
+  },
+  "pilot:GunShield": {
+    "NAME": "Gun Shield",
+    "DESCRIPTION": " pilot:Armament. NL Whenever you play an pilot:Armament Attack, gain !M! pilot:Shields."
+  },
+  "pilot:ApexForm": {
+    "NAME": "Apex Form",
+    "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
   }
 }

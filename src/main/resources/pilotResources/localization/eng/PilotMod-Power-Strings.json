@@ -36,5 +36,30 @@
     "DESCRIPTIONS": [
       "Increases #yBlock gained from cards by #b%1$s. At end of turn, reduce #yMomentum by the number of cards in your hand."
     ]
+  },
+  "pilot:Protocol3Power": {
+    "NAME": "Protocol 3",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%1$s #yProtect."
+    ]
+  },
+  "pilot:AdvancedAutoTitanPower": {
+    "NAME": "Advanced Auto Titan",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b%1$s #yArmament.",
+      "At the start of your turn, draw #b%1$s #yArmamentss."
+    ]
+  },
+  "pilot:GunShieldPower": {
+    "NAME": "Gun Shield",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yArmament #yAttack, gain #b%1$s #yShields."
+    ]
+  },
+  "pilot:ApexFormPower": {
+    "NAME": "Apex Form",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, gain #b%1$s #yMomentum."
+    ]
   }
 }
