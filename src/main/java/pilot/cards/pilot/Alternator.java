@@ -48,7 +48,6 @@ public class Alternator extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
-
     }
 
     @Override
