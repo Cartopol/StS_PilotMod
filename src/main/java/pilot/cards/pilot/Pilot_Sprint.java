@@ -20,7 +20,6 @@ public class Pilot_Sprint extends CustomPilotModCard {
     private static final int COST = 1;
     private static final int DRAW = 1;
     private static final int MOMENTUM = 3;
-    private static final int UPGRADE_PLUS_MOMENTUM = 1;
 
     public Pilot_Sprint() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -39,7 +38,6 @@ public class Pilot_Sprint extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeUrMagicNumber(UPGRADE_PLUS_MOMENTUM);
             upgradeDescription();
             this.exhaust = false;
         }

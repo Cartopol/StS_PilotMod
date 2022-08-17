@@ -24,6 +24,8 @@ public class Alternator extends CustomPilotModCard {
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int DAMAGE_PER_MOMENTUM = 1;
 
+    private static final int DAMAGE_PER_MOMENTUM = 1;
+
     public Alternator() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
@@ -47,11 +49,9 @@ public class Alternator extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (((Pilot)p).hasMomentum() && p.hasPower(DexterityPower.POWER_ID)) {
-            this.baseDamage += p.getPower(DexterityPower.POWER_ID).amount;
-        }
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
+
     }
 
     @Override

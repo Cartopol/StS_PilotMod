@@ -1,61 +1,57 @@
-package pilot.cards.pilot;
-
+package pilot.cards.pilot.tempCards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
-import pilot.powers.MomentumPower;
 
-public class CAR extends CustomPilotModCard {
-    public static final String ID = PilotMod.makeID(CAR.class);
+public class Mastiff extends CustomPilotModCard {
+    public static final String ID = PilotMod.makeID(Mastiff.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 0;
-    private static final int DAMAGE = 1;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int DAMAGE_PER_MOMENTUM = 1;
+    private static final int COST = 1;
+    private static final int DAMAGE = 12;
+    private static final int UPGRADED_PLUS_DMG = 5;
 
-    public CAR() {
+    public Mastiff() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = DAMAGE_PER_MOMENTUM;
+        this.exhaust = true;
     }
 
     @Override
     public boolean shouldGlowGold() {
-        return ((Pilot)AbstractDungeon.player).hasMomentum();
+        return ((Pilot) AbstractDungeon.player).hasAdvantage();
     }
 
     @Override
     protected int calculateBonusBaseDamage() {
         AbstractPlayer p = AbstractDungeon.player;
         int bonusDamage = 0;
-        if (p.hasPower(MomentumPower.POWER_ID)) {
-            bonusDamage = p.getPower(MomentumPower.POWER_ID).amount * magicNumber;
+        if (((Pilot)p).hasAdvantage()) {
+            bonusDamage = baseDamage;
         }
         return bonusDamage;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_HEAVY));
     }
 
-    @Override
     public void upgrade() {
-        if (!upgraded) {
+        if (!upgraded){
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(UPGRADED_PLUS_DMG);
             upgradeDescription();
         }
     }
