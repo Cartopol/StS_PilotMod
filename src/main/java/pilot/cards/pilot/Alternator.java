@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
@@ -22,8 +21,6 @@ public class Alternator extends CustomPilotModCard {
     private static final int COST = 1;
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int DAMAGE_PER_MOMENTUM = 1;
-
     private static final int DAMAGE_PER_MOMENTUM = 1;
 
     public Alternator() {
