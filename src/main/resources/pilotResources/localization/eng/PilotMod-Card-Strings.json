@@ -128,7 +128,7 @@
   },
   "pilot:Slide": {
     "NAME": "Slide",
-    "DESCRIPTION": "Draw !M! cards. NL Gain 1 pilot:Momentum for each card played this turn."
+    "DESCRIPTION": "Ethereal. NL Draw !M! cards. NL Gain 1 pilot:Momentum for each card played this turn."
   },
   "pilot:Throw": {
     "NAME": "Throw",
@@ -147,5 +147,22 @@
   "pilot:Mastiff": {
     "NAME": "Mastiff",
     "DESCRIPTION": " Deal !D! Damage. NL Advantage: Double the damage dealt."
+  },
+  "pilot:Protocol3": {
+    "NAME": "Protocol 3",
+    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, gain !M! pilot:Protect."
+  },
+  "pilot:AdvancedAutoTitan": {
+    "NAME": "Advanced Auto Titan",
+    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, draw !M! pilot:Armament."
+  },
+  "pilot:GunShield": {
+    "NAME": "Gun Shield",
+    "DESCRIPTION": " pilot:Armament. NL Whenever you play an pilot:Armament Attack, gain !M! pilot:Shields."
+  },
+  "pilot:ApexForm": {
+    "NAME": "Apex Form",
+    "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
   }
 }

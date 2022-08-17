@@ -22,6 +22,7 @@ public class Alternator extends CustomPilotModCard {
     private static final int COST = 1;
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE_PER_MOMENTUM = 1;
 
     private static final int DAMAGE_PER_MOMENTUM = 1;
 
@@ -38,7 +39,7 @@ public class Alternator extends CustomPilotModCard {
 
     @Override
     protected int calculateBonusBaseDamage() {
-        AbstractPlayer p =AbstractDungeon.player;
+        AbstractPlayer p = AbstractDungeon.player;
         int bonusDamage = 0;
         if (p.hasPower(MomentumPower.POWER_ID)) {
             bonusDamage = p.getPower(MomentumPower.POWER_ID).amount * magicNumber;
