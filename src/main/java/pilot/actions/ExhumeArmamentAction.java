@@ -37,8 +37,9 @@ public class ExhumeArmamentAction extends AbstractGameAction {
 
             ArrayList<AbstractCard> TitanCardsInExhaustPile = new ArrayList<>();
             for (AbstractCard d : AbstractDungeon.player.exhaustPile.group) {
-                // remove all cards from the the exhaust pile that are not Armaments
-                if (ArmamentFieldPatch.isArmament.get(d) || d.name.equals(Rearm.ID)) {
+                // remove all cards from the the exhaust pile that are not Armaments or Rearms
+                if (ArmamentFieldPatch.isArmament.get(d) && !d.cardID.equals(Rearm.ID)) {
+                    PilotMod.logger.info("Added {} to exhaust pile", d.name);
                     TitanCardsInExhaustPile.add(d);
                 }
             }
@@ -68,7 +69,8 @@ public class ExhumeArmamentAction extends AbstractGameAction {
                     d.stopGlowing();
                     d.unhover();
                     d.unfadeOut();
-                    if (!ArmamentFieldPatch.isArmament.get(d) || d.name.equals(Rearm.ID)) {
+                    PilotMod.logger.info("Evaluated {} for Rearm", d.name);
+                    if (!ArmamentFieldPatch.isArmament.get(d) || d.cardID.equals(Rearm.ID)) {
                         cardsToRemove.add(d);
                         this.exhumes.add(d);
                     }

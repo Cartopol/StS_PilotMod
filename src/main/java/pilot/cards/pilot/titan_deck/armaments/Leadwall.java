@@ -39,14 +39,14 @@ public class Leadwall extends CustomTitanCard {
 
     @Override
     public boolean shouldGlowGold() {
-        return isEngaging();
+        return isEngaging(false);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
 
-        if (isEngaging()) {
+        if (isEngaging(true)) {
             addToBot(new GainBlockAction(p, block));
             addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, MOMENTUM)));
         }

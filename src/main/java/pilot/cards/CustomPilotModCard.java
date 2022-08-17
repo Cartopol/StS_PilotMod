@@ -284,11 +284,19 @@ public abstract class CustomPilotModCard extends CustomCard {
         return null;
     }
 
-    public boolean isEngaging() {
-        boolean isEngaging = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= 1;
+    public boolean isEngaging(boolean isPlayingEngageCard) {
+        int engageThreshold;
+        if (isPlayingEngageCard) {
+           engageThreshold = 1;
+        } else {
+            engageThreshold = 0;
+        }
+        boolean isEngaging = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= engageThreshold;
         logger.info("Pilot is engaging: {} ", isEngaging);
         return isEngaging;
     }
+
+
 
     @Override
     public void atTurnStart() {

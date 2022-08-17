@@ -30,7 +30,7 @@ public class EVA8 extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (isEngaging()) {
+        if (isEngaging(true)) {
             this.isMultiDamage = true;
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AttackEffect.FIRE));
         } else {
@@ -41,7 +41,7 @@ public class EVA8 extends CustomPilotModCard {
 
     @Override
     public boolean shouldGlowGold() {
-        return isEngaging();
+        return isEngaging(false);
     }
 
     @Override
