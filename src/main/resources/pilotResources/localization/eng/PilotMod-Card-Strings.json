@@ -142,10 +142,10 @@
   },
   "pilot:Rush": {
     "NAME": "Rush",
-    "DESCRIPTION": " Discard !M! card. NL Add 1 Mastiff to your hand."
+    "DESCRIPTION": "Gain ??? Momentum. NL Discard !M! card. NL Add 1 Mastiff to your hand."
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",
-    "DESCRIPTION": " Deal !D! Damage and gain !M! Momentum. NL Advantage: Double the damage dealt."
+    "DESCRIPTION": " Deal !D! Damage. NL Advantage: Double the damage dealt."
   }
 }

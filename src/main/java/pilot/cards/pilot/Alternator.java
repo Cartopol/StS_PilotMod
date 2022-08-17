@@ -48,12 +48,9 @@ public class Alternator extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (((Pilot)p).hasMomentum() && p.hasPower(MomentumPower.POWER_ID)) {
-            this.baseDamage += p.getPower(MomentumPower.POWER_ID).amount;
-        }
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
-        this.baseDamage -= p.getPower(MomentumPower.POWER_ID).amount;
+
     }
 
     @Override

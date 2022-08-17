@@ -1,5 +1,6 @@
 package pilot.cards.pilot;
 
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -47,13 +48,7 @@ public class CAR extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (((Pilot)p).hasMomentum() && p.hasPower(MomentumPower.POWER_ID)) {
-            this.baseDamage += p.getPower(MomentumPower.POWER_ID).amount;
-        }
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
-       if (((Pilot)p).hasMomentum() && p.hasPower(MomentumPower.POWER_ID)) {
-           this.baseDamage -= p.getPower(MomentumPower.POWER_ID).amount;
-       }
     }
 
     @Override
