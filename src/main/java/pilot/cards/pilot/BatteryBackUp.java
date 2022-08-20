@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
+import pilot.actions.ExhumeArmamentAction;
 
 public class BatteryBackUp extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(BatteryBackUp.class);
@@ -17,11 +18,13 @@ public class BatteryBackUp extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int SHIELDS = 5;
+    private static final int CARDS_RETURNED = 1;
     private static final int UPGRADE_PLUS_SHIELDS = 3;
 
     public BatteryBackUp() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = SHIELDS;
+        metaMagicNumber = baseMetaMagicNumber = CARDS_RETURNED;
         this.exhaust = true;
     }
 
@@ -34,6 +37,8 @@ public class BatteryBackUp extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (((Pilot)p).hasTitan()) {
             ((Pilot) p).getTitan().increaseShields(magicNumber);
+            addToBot(new ExhumeArmamentAction(false));
+
         }
     }
 
