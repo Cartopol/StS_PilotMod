@@ -167,6 +167,6 @@
   },
   "pilot:Hover": {
     "Name": "Hover",
-    "Description": "Draw !M! cards and add !pilot:MetaMagic! *Dazed to the top of your deck."
+    "Description": "Draw !M! cards. NL Add !pilot:MetaMagic! *Dazed to the top of your deck."
   }
 }

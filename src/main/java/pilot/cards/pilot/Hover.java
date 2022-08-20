@@ -34,7 +34,7 @@ public class Hover extends CustomPilotModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
         addToBot(new DrawCardAction(magicNumber));
-        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), metaMagicNumber, false, false));
+        addToBot(new MakeTempCardInDrawPileAction(new Dazed(), metaMagicNumber, false, true));
     }
 
     @Override
