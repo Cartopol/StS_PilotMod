@@ -35,6 +35,11 @@ public class PhaseDash extends CustomTitanCard {
     }
 
     @Override
+    public boolean shouldGlowGold() {
+        return isEngaging(false);
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
        if (isEngaging (true)) {
            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
