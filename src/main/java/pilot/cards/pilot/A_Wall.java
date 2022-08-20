@@ -24,8 +24,8 @@ public class A_Wall extends CustomPilotModCard {
 
     public A_Wall() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = BLOCK;
-        metaMagicNumber = baseMetaMagicNumber = VULNERABLE;
+        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = VULNERABLE;
     }
 
     @Override
