@@ -36,8 +36,10 @@ public class PhaseDash extends CustomTitanCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
-        addToBot(new DiscardAction(p, p, metaMagicNumber, false));
+       if (isEngaging (true)) {
+           addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
+           addToBot(new DiscardAction(p, p, metaMagicNumber, false));
+       }
     }
 
     @Override
