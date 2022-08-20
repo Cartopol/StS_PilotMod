@@ -164,5 +164,9 @@
     "NAME": "Apex Form",
     "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
+  },
+  "pilot:A_Wall": {
+    "NAME": "A-Wall",
+    "DESCRIPTION": "Gain !M! Block. NL Apply !ApplyMetaMagic! Vulnerble."
   }
 }
