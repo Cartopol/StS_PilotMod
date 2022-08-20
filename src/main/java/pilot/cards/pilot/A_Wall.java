@@ -19,7 +19,7 @@ public class A_Wall extends CustomPilotModCard {
 
     private static final int COST = 2;
     private static final int BLOCK = 13;
-    private static final int VULNERABLE = 3;
+    private static final int VULNERABLE = 2;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public A_Wall() {

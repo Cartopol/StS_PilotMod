@@ -167,6 +167,6 @@
   },
   "pilot:A_Wall": {
     "NAME": "A-Wall",
-    "DESCRIPTION": "Gain !M! Block. NL Apply !ApplyMetaMagic! Vulnerble."
+    "DESCRIPTION": "Gain !M! Block. NL Apply !pilot:MetaMagic! Vulnerable."
   }
 }
