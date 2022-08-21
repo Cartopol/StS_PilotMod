@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
-import pilot.cards.pilot.Strike;
+import pilot.cards.pilot.Frag;
 import pilot.characters.Pilot;
 
 public class Pull_the_Pin extends CustomPilotModCard {
@@ -21,12 +21,12 @@ public class Pull_the_Pin extends CustomPilotModCard {
 
     public Pull_the_Pin() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        this.cardsToPreview = new Strike();
+        this.cardsToPreview = new Frag();
     }
 
     @Override
     public void use (AbstractPlayer p, AbstractMonster m){
-        addToBot(new MakeTempCardInDrawPileAction(new Strike(), 1, false, true));
+        addToBot(new MakeTempCardInDrawPileAction(new Frag(), 1, false, true));
     }
 
     @Override
