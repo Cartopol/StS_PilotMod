@@ -111,7 +111,7 @@
   },
   "pilot:CoverFire": {
     "NAME": "Cover Fire",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak. NL Gain !pilot:MetaMagic: Protect."
   },
   "pilot:Shield": {
     "NAME": "Shield",
