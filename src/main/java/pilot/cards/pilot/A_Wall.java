@@ -30,7 +30,7 @@ public class A_Wall extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
-        addToBot(new GainBlockAction(p, p, BLOCK));
+        addToBot(new GainBlockAction(p, p, block));
         addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, metaMagicNumber, false)));
     }
 
