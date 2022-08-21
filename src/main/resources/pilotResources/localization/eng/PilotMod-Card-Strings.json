@@ -84,7 +84,7 @@
   },
   "pilot:Pilot_Dash": {
     "NAME": "Dash",
-    "DESCRIPTION": " pilot:Armament. pilot:Reflex. NL Gain !B! Block. NL Gain !M! pilot:Momentum."
+    "DESCRIPTION": " pilot:Armament. NL Shuffle !M! pilot:Armaments from your Exhaust pile into your Titan."
   },
   "pilot:BunnyHop": {
     "NAME": "Bunny Hop",
@@ -98,12 +98,12 @@
   },
   "pilot:Leadwall": {
     "NAME": "Leadwall",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL If you are engaging, gain !B! Block and !M! pilot:Momentum."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL pilot:Engage: Shuffle !M! pilot:Armaments from your exhaust pile into your Titan."
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
-    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
+    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
   },
   "pilot:Ronin": {
     "NAME": "Ronin",
