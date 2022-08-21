@@ -30,6 +30,7 @@ public class DomeShield extends CustomTitanCard{
         metaMagicNumber = baseMetaMagicNumber = SHIELDS;
         magicNumber = baseMagicNumber = PROTECT;
         ArmamentFieldPatch.isArmament.set(this, true);
+        this.isEthereal = true;
     }
 
     @Override
