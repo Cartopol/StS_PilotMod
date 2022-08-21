@@ -8,8 +8,8 @@ import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
 import pilot.powers.ProtectPower;
 
-public class Embark extends CustomPilotModCard {
-    public static final String ID = PilotMod.makeID(Embark.class);
+public class Guard extends CustomPilotModCard {
+    public static final String ID = PilotMod.makeID(Guard.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -20,7 +20,7 @@ public class Embark extends CustomPilotModCard {
     private static final int PROTECT = 3;
     private static final int UPGRADE_COST = 0;
 
-    public Embark() {
+    public Guard() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = PROTECT;
     }

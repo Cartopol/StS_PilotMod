@@ -65,8 +65,8 @@
     "NAME": "CAR",
     "DESCRIPTION": "Deal !D! damage. pilot:Momentum increases this damage."
   },
-  "pilot:Embark": {
-    "NAME": "Embark",
+  "pilot:Guard": {
+    "NAME": "Guard",
     "DESCRIPTION": "Gain !M! pilot:Protect."
   },
   "pilot:BatteryBackUp": {
