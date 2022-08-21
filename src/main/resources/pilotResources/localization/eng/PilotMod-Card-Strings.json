@@ -167,10 +167,10 @@
   },
   "pilot:Pull_the_Pin": {
     "NAME": "Pull_the_Pin",
-    "DESCRIPTION": "Add 1 Frag to the top of your draw pile."
+    "DESCRIPTION": "Add 1 *Frag to the top of your draw pile."
   },
   "pilot:Frag": {
     "NAME": "Frag",
-    "DESCRIPTION": "Deal !D! to all enemies. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Deal !D! Damage to all enemies. NL Exhaust."
   }
 }
