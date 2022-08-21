@@ -11,6 +11,7 @@ import pilot.PilotMod;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
+import pilot.powers.ProtectPower;
 
 public class CoverFire extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(CoverFire.class);
@@ -20,9 +21,10 @@ public class CoverFire extends CustomTitanCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int COST = 2;
+    private static final int DAMAGE = 12;
     private static final int WEAK = 1;
+    private static final int PROTECT = 1;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int UPGRADE_PLUS_WEAK = 1;
 
@@ -30,6 +32,7 @@ public class CoverFire extends CustomTitanCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = WEAK;
+        metaMagicNumber = baseMetaMagicNumber = PROTECT;
         ArmamentFieldPatch.isArmament.set(this, true);
         this.exhaust = true;
         this.isEthereal = true;
@@ -39,6 +42,7 @@ public class CoverFire extends CustomTitanCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+        addToBot( new ApplyPowerAction(p, p, new ProtectPower(p, metaMagicNumber)));
     }
 
     @Override
