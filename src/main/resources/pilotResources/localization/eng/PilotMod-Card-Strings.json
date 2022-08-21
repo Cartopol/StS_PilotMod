@@ -164,5 +164,10 @@
     "NAME": "Apex Form",
     "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
+  },
+  "pilot:DomeShield": {
+    "NAME": "Dome Shield",
+    "DESCRIPTION": "Gain !M! pilot:Protect.",
+    "UPGRADE_DESCRIPTION": "Gain !M! pilot:Protect. NL Gain !pilot:MetaMagic! Shields."
   }
 }
