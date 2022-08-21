@@ -65,8 +65,8 @@
     "NAME": "CAR",
     "DESCRIPTION": "Deal !D! damage. pilot:Momentum increases this damage."
   },
-  "pilot:Embark": {
-    "NAME": "Embark",
+  "pilot:Guard": {
+    "NAME": "Guard",
     "DESCRIPTION": "Gain !M! pilot:Protect."
   },
   "pilot:BatteryBackUp": {
@@ -111,7 +111,7 @@
   },
   "pilot:CoverFire": {
     "NAME": "Cover Fire",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak. NL Gain !pilot:MetaMagic: Protect."
   },
   "pilot:Shield": {
     "NAME": "Shield",
@@ -146,7 +146,7 @@
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",
-    "DESCRIPTION": " Deal !D! Damage. NL Advantage: Double the damage dealt."
+    "DESCRIPTION": " Deal !D! Damage. NL Pilot:Advantage: Double the damage dealt. Exhaust."
   },
   "pilot:Protocol3": {
     "NAME": "Protocol 3",
@@ -165,8 +165,20 @@
     "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
   },
+  {
   "pilot:A_Wall": {
     "NAME": "A-Wall",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable."
+  },
+  {
+  "pilot:Hover": {
+    "NAME": "Hover",
+    "DESCRIPTION": "Draw !M! cards. NL Add !pilot:MetaMagic! *Dazed to the top of your deck."
+  },
+  {
+  "pilot:DomeShield": {
+    "NAME": "Dome Shield",
+    "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect. NL Gain !pilot:MetaMagic! Shields."
   }
 }
