@@ -20,9 +20,10 @@ public class Hover extends CustomPilotModCard {
     private static final int COST = 0;
 
     private static final int DRAW = 2;
-    private static final int ADD_DAZED = 2;
+    private static final int ADD_DAZED = 1;
 
-    private static final int UPGRADE_PLUS_ADD_DAZED = -1;
+    private static final int UPGRADE_PLUS_DRAW = 1;
+    private static final int UPGRADE_PLUS_ADD_DAZED = 1;
 
     public Hover() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,6 +42,7 @@ public class Hover extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_DRAW);
             upgradeMetaMagicNumber(UPGRADE_PLUS_ADD_DAZED);
             upgradeDescription();
         }
