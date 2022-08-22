@@ -25,7 +25,7 @@ public class Protocol3 extends CustomTitanCard {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = PROTECT;
         ArmamentFieldPatch.isArmament.set(this, true);
-
+        this.isEthereal = true;
     }
 
     @Override
