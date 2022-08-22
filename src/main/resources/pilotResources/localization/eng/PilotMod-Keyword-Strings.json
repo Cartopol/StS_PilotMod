@@ -18,7 +18,7 @@
   },
   {
     "NAMES": ["momentum"],
-    "DESCRIPTION": "Momentum improves Block gained from cards. At end of turn, it is reduced by the number of cards in your hand."
+    "DESCRIPTION": "Momentum improves Attack Damage and Block gained from cards. At end of turn, it is reduced by half."
   },
   {
     "NAMES": ["armament", "armaments"],

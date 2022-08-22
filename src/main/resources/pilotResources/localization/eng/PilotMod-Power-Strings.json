@@ -34,7 +34,7 @@
   "pilot:MomentumPower": {
     "NAME": "Momentum",
     "DESCRIPTIONS": [
-      "Increases #yBlock gained from cards by #b%1$s. At end of turn, lose half of your current #yMomentum."
+      "Increases #yAttack #yDamage and #yBlock gained from cards by #b%1$s. At end of turn, lose half of your current #yMomentum."
     ]
   },
   "pilot:Protocol3Power": {

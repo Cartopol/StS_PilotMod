@@ -1,6 +1,7 @@
 package pilot.powers;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,6 +27,11 @@ public class MomentumPower extends CustomPilotModPower {
     @Override
     public float modifyBlock(float blockAmount) {
             return (blockAmount += (float)this.amount) < 0.0F ? 0.0F : blockAmount;
+    }
+
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        return type == DamageInfo.DamageType.NORMAL ? damage + (float)this.amount : damage;
     }
 
     @Override
