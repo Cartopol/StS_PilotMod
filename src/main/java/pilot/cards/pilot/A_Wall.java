@@ -21,6 +21,7 @@ public class A_Wall extends CustomPilotModCard {
     private static final int BLOCK = 13;
     private static final int VULNERABLE = 2;
     private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int UPGRADE_PLUS_VULN = 1;
 
     public A_Wall() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -31,7 +32,7 @@ public class A_Wall extends CustomPilotModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m){
         addToBot(new GainBlockAction(p, p, block));
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, metaMagicNumber, false)));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
     }
 
     @Override
@@ -39,6 +40,7 @@ public class A_Wall extends CustomPilotModCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_VULN);
             upgradeDescription();
         }
     }

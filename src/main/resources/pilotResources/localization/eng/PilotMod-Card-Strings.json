@@ -166,7 +166,7 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
   },
   "pilot:Pull_the_Pin": {
-    "NAME": "Pull_the_Pin",
+    "NAME": "Pull the Pin",
     "DESCRIPTION": "Add 1 *Frag to the top of your draw pile."
   },
   "pilot:Frag": {
