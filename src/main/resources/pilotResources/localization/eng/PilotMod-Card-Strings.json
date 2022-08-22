@@ -71,8 +71,8 @@
   },
   "pilot:BatteryBackUp": {
     "NAME": "Battery Back-up",
-    "DESCRIPTION": "Give your Titan !M! pilot:Shields. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Give your Titan !M! pilot:Shields. NL Exhaust."
+    "DESCRIPTION": "Give your Titan !M! pilot:Shields. NL Shuffle !M! pilot:Armaments from your exhaust pile into your Titan. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Give your Titan !M! pilot:Shields. NL Shuffle !M! pilot:Armaments from your exhaust pile into your Titan. Exhaust."
   },
   "pilot:WallHang": {
     "NAME": "Wall Hang",
