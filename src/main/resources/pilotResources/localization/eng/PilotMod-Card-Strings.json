@@ -65,8 +65,8 @@
     "NAME": "CAR",
     "DESCRIPTION": "Deal !D! damage. pilot:Momentum increases this damage."
   },
-  "pilot:Embark": {
-    "NAME": "Embark",
+  "pilot:Guard": {
+    "NAME": "Guard",
     "DESCRIPTION": "Gain !M! pilot:Protect."
   },
   "pilot:BatteryBackUp": {
@@ -84,7 +84,7 @@
   },
   "pilot:Pilot_Dash": {
     "NAME": "Dash",
-    "DESCRIPTION": " pilot:Armament. pilot:Reflex. NL Gain !B! Block. NL Gain !M! pilot:Momentum."
+    "DESCRIPTION": " pilot:Armament. NL Shuffle !M! pilot:Armaments from your Exhaust pile into your Titan."
   },
   "pilot:BunnyHop": {
     "NAME": "Bunny Hop",
@@ -98,12 +98,12 @@
   },
   "pilot:Leadwall": {
     "NAME": "Leadwall",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL If you are engaging, gain !B! Block and !M! pilot:Momentum."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL pilot:Engage: Shuffle !M! pilot:Armaments from your exhaust pile into your Titan."
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
-    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
+    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
   },
   "pilot:Ronin": {
     "NAME": "Ronin",
@@ -111,7 +111,7 @@
   },
   "pilot:CoverFire": {
     "NAME": "Cover Fire",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak. NL Gain !pilot:MetaMagic: Protect."
   },
   "pilot:Shield": {
     "NAME": "Shield",
@@ -146,7 +146,7 @@
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",
-    "DESCRIPTION": " Deal !D! Damage. NL Advantage: Double the damage dealt."
+    "DESCRIPTION": " Deal !D! Damage. NL Pilot:Advantage: Double the damage dealt. Exhaust."
   },
   "pilot:Protocol3": {
     "NAME": "Protocol 3",
@@ -164,5 +164,21 @@
     "NAME": "Apex Form",
     "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
+  },
+  {
+  "pilot:A_Wall": {
+    "NAME": "A-Wall",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable."
+  },
+  {
+  "pilot:Hover": {
+    "NAME": "Hover",
+    "DESCRIPTION": "Draw !M! cards. NL Add !pilot:MetaMagic! *Dazed to the top of your deck."
+  },
+  {
+  "pilot:DomeShield": {
+    "NAME": "Dome Shield",
+    "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect. NL Gain !pilot:MetaMagic! Shields."
   }
 }
