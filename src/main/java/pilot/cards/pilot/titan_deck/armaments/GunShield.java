@@ -1,15 +1,15 @@
-package pilot.cards.pilot;
+package pilot.cards.pilot.titan_deck.armaments;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
-import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
 import pilot.powers.GunShieldPower;
 
-public class GunShield extends CustomPilotModCard {
+public class GunShield extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(GunShield.class);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
