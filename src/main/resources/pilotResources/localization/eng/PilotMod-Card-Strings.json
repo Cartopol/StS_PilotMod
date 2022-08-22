@@ -111,7 +111,7 @@
   },
   "pilot:CoverFire": {
     "NAME": "Cover Fire",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak. NL Gain !pilot:MetaMagic: Protect."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL Apply !M! Weak. NL Gain !pilot:MetaMagic! Protect."
   },
   "pilot:Shield": {
     "NAME": "Shield",
@@ -137,8 +137,8 @@
   },
   "pilot:SmokeBomb": {
     "NAME": "Smoke Bomb",
-    "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed."
+    "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed. NL Exhaust."
   },
   "pilot:Rush": {
     "NAME": "Rush",
