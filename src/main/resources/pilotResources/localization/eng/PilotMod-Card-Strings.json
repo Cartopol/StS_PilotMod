@@ -142,7 +142,7 @@
   },
   "pilot:Rush": {
     "NAME": "Rush",
-    "DESCRIPTION": "Gain ??? Momentum. NL Discard !M! card. NL Add 1 Mastiff to your hand."
+    "DESCRIPTION": "Gain !pilot:MetaMagic! Momentum. NL Discard !M! card. NL Add 1 Mastiff to your hand."
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",

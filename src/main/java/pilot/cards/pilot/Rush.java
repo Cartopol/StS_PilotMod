@@ -27,7 +27,7 @@ public class Rush extends CustomPilotModCard{
     public Rush() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DISCARD;
-        metaMagicNumber = baseMetaMagicNumber =MOMENTUM;
+        metaMagicNumber = baseMetaMagicNumber = MOMENTUM;
         this.cardsToPreview = new Mastiff();
     }
 
