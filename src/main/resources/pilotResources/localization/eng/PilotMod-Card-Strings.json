@@ -165,17 +165,22 @@
     "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
   },
-  {
+  "pilot:Pull_the_Pin": {
+    "NAME": "Pull_the_Pin",
+    "DESCRIPTION": "Add 1 *Frag to the top of your draw pile."
+  },
+  "pilot:Frag": {
+    "NAME": "Frag",
+    "DESCRIPTION": "Ethereal. NL Deal !D! Damage to all enemies. NL Exhaust."
+  },
   "pilot:A_Wall": {
     "NAME": "A-Wall",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable."
   },
-  {
   "pilot:Hover": {
     "NAME": "Hover",
     "DESCRIPTION": "Draw !M! cards. NL Add !pilot:MetaMagic! *Dazed to the top of your deck."
   },
-  {
   "pilot:DomeShield": {
     "NAME": "Dome Shield",
     "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect.",
