@@ -17,27 +17,29 @@ public class Command extends CustomPilotModCard {
 
     private static final int COST = 0;
     private static final int DRAW = 1;
-
+    private static final int UPGRADED_PLUS_DRAW = 1;
 
     public Command() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = DRAW;
-        exhaust = true;
+        this.isEthereal = true;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawArmamentAction(false));
-
+        if (upgraded = true) { //this only seems to work sometimes and I'm not sure why
+            addToBot(new DrawArmamentAction(false));
+        }
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADED_PLUS_DRAW);
             upgradeDescription();
-            exhaust = false;
         }
     }
 }

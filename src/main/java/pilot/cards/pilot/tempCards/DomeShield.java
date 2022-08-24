@@ -1,4 +1,4 @@
-package pilot.cards.pilot.tempCards;
+/* package pilot.cards.pilot.tempCards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -48,3 +48,4 @@ public class DomeShield extends CustomTitanCard{
         }
     }
 }
+*/

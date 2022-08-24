@@ -123,8 +123,7 @@
   },
   "pilot:Command": {
     "NAME": "Command",
-    "DESCRIPTION": "Draw !M! pilot:Armament. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! pilot:Armament."
+    "DESCRIPTION": "Ethereal. NL Draw !M! pilot:Armament."
   },
   "pilot:Slide": {
     "NAME": "Slide",
