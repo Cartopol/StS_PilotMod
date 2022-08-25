@@ -102,8 +102,8 @@
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
-    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
+    "DESCRIPTION": " pilot:Armament. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards. NL pilot:Reflex: Reduce the cost by 1.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card. NL pilot:Reflex: Reduce the cost by 1."
   },
   "pilot:Ronin": {
     "NAME": "Ronin",
