@@ -23,7 +23,7 @@
   },
   "pilot:Kick": {
     "NAME": "Kick",
-    "DESCRIPTION": " pilot:Reflex. NL Deal !D! damage. NL Draw !M! card."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Reflex: Draw !M! card."
   },
   "pilot:Mozambique": {
     "NAME": "Mozambique",

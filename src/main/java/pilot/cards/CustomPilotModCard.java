@@ -259,20 +259,20 @@ public abstract class CustomPilotModCard extends CustomCard {
 
 
 
-
-    @Override
-    public void triggerWhenDrawn() {
-        super.triggerWhenDrawn();
-        if (ReflexFieldPatch.hasReflex.get(this)) {
-            if (((Pilot)AbstractDungeon.player).isReflexed()) {
-                addToBot(new ReduceCostAction(this.uuid, 1));
-                PilotMod.logger.info("Reflex card reduced by 1");
-            }
+// Use this code for Reflexed
+    //@Override
+ //   public void triggerWhenDrawn() {
+ //       super.triggerWhenDrawn();
+ //       if (ReflexFieldPatch.hasReflex.get(this)) {
+ //           if (((Pilot)AbstractDungeon.player).isReflexed()) {
+ //               addToBot(new ReduceCostAction(this.uuid, 1));
+ //               PilotMod.logger.info("Reflex card reduced by 1");
+//            }
 
 //            AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(this, true, true, true));
 //            AbstractDungeon.actionManager.addToBottom(new MillAction(AbstractDungeon.player, AbstractDungeon.player, 1));
-        }
-    }
+//        }
+ //   }
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {

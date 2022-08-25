@@ -3,13 +3,16 @@ package pilot.cards.pilot.titan_deck.armaments;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import pilot.PilotMod;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
 import pilot.patches.ArmamentFieldPatch;
 import pilot.patches.ReflexFieldPatch;
+
 
 public class PhaseDash extends CustomTitanCard {
     public static final String ID = PilotMod.makeID(PhaseDash.class);
@@ -37,6 +40,15 @@ public class PhaseDash extends CustomTitanCard {
     @Override
     public boolean shouldGlowGold() {
         return isEngaging(false);
+    }
+
+    public void triggerWhenDrawn(){
+        super.triggerWhenDrawn();
+        if (ReflexFieldPatch.hasReflex.get(this)) {
+            if (((Pilot) AbstractDungeon.player).isReflexed()){
+                addToBot(new ReduceCostAction(this.uuid, 1));
+            }
+        }
     }
 
     @Override
