@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import pilot.characters.Pilot;
 
 public class ApexFormPower extends CustomPilotModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(ApexFormPower.class);
@@ -26,10 +27,12 @@ public class ApexFormPower extends CustomPilotModPower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        super.onPlayCard(card, m);
-            flash();
-            AbstractPlayer p = AbstractDungeon.player;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MomentumPower(p, amount)));
+       if (((Pilot)AbstractDungeon.player).hasAdvantage()) {
+           super.onPlayCard(card, m);
+           flash();
+           AbstractPlayer p = AbstractDungeon.player;
+           AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MomentumPower(p, amount)));
+       }
     }
 
     @Override

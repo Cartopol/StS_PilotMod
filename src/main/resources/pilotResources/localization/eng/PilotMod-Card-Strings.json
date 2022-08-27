@@ -159,8 +159,8 @@
   },
   "pilot:ApexForm": {
     "NAME": "Apex Form",
-    "DESCRIPTION": "Ethereal Whenever you play a card, gain !M! pilot:Momentum.",
-    "UPGRADE_DESCRIPTION": "Innate Ethereal NL Whenever you play a card, gain !M! pilot:Momentum."
+    "DESCRIPTION": "Ethereal NL Whenever you play a card with 5 or more cards in your hand, gain !M! pilot:Momentum.",
+    "UPGRADE_DESCRIPTION": "Innate Ethereal NL Whenever you play a card with 5 or more cards in your hand, gain !M! pilot:Momentum."
   },
   "pilot:Pull_the_Pin": {
     "NAME": "Pull the Pin",
