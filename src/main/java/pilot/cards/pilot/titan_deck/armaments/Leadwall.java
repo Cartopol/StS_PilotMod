@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.actions.ExhumeArmamentAction;
 import pilot.PilotMod;
@@ -35,15 +36,13 @@ public class Leadwall extends CustomTitanCard {
     }
 
     @Override
-    public boolean shouldGlowGold() {
-        return isEngaging(false);
-    }
+    public boolean shouldGlowGold() { return ((Pilot) AbstractDungeon.player).hasAdvantage();}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.BLUNT_LIGHT));
 
-        if (isEngaging(true)) {
+        if (((Pilot)p).hasAdvantage()) {
             addToBot(new ExhumeArmamentAction(false));
         }
     }

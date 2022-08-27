@@ -39,7 +39,7 @@
   },
   "pilot:EVA8": {
     "NAME": "EVA-8",
-    "DESCRIPTION": "Deal !D! damage. NL pilot:Engage: deal !D! damage to ALL enemies instead."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Advantage: deal !D! damage to ALL enemies instead."
   },
   "pilot:DoubleTake": {
     "NAME": "Double Take",
@@ -59,11 +59,13 @@
   },
   "pilot:Alternator": {
     "NAME": "Alternator",
-    "DESCRIPTION": "Deal !D! damage to a random enemy twice. pilot:Momentum increases this damage."
+    "DESCRIPTION": "Deal !D! damage to a random enemy 3 times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy 4 times."
   },
   "pilot:CAR": {
     "NAME": "CAR",
-    "DESCRIPTION": "Deal !D! damage. pilot:Momentum increases this damage."
+    "DESCRIPTION": "Deal !D! damage twice.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain !M! Momentum."
   },
   "pilot:Guard": {
     "NAME": "Guard",
@@ -98,11 +100,11 @@
   },
   "pilot:Leadwall": {
     "NAME": "Leadwall",
-    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL pilot:Engage: Shuffle !M! pilot:Armaments from your exhaust pile into your Titan."
+    "DESCRIPTION": " pilot:Armament. NL Deal !D! damage. NL pilot:Advantage: Shuffle !M! pilot:Armaments from your exhaust pile into your Titan."
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
+    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Advantage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
     "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
   },
   "pilot:Ronin": {

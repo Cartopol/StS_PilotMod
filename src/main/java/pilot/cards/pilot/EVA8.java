@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
@@ -29,19 +30,17 @@ public class EVA8 extends CustomPilotModCard {
         }
 
     @Override
+    public boolean shouldGlowGold() { return ((Pilot) AbstractDungeon.player).hasAdvantage();}
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (isEngaging(true)) {
+        if (((Pilot)p).hasAdvantage()) {
             this.isMultiDamage = true;
             this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AttackEffect.FIRE));
         } else {
             this.isMultiDamage = false;
             addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
         }
-    }
-
-    @Override
-    public boolean shouldGlowGold() {
-        return isEngaging(false);
     }
 
     @Override

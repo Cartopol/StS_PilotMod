@@ -2,6 +2,7 @@ package pilot.cards.pilot;
 
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,34 +22,23 @@ public class CAR extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 1;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int DAMAGE_PER_MOMENTUM = 1;
+    private static final int DAMAGE = 2;
+    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int MOMENTUM = 1;
+
 
     public CAR() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = DAMAGE_PER_MOMENTUM;
-    }
-
-    @Override
-    public boolean shouldGlowGold() {
-        return ((Pilot)AbstractDungeon.player).hasMomentum();
-    }
-
-    @Override
-    protected int calculateBonusBaseDamage() {
-        AbstractPlayer p = AbstractDungeon.player;
-        int bonusDamage = 0;
-        if (p.hasPower(MomentumPower.POWER_ID)) {
-            bonusDamage = p.getPower(MomentumPower.POWER_ID).amount * magicNumber;
-        }
-        return bonusDamage;
+        magicNumber = baseMagicNumber = MOMENTUM;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
+        if (upgraded)
+            { addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, magicNumber))); }
     }
 
     @Override

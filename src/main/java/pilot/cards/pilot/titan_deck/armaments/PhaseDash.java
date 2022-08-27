@@ -3,6 +3,7 @@ package pilot.cards.pilot.titan_deck.armaments;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import pilot.PilotMod;
@@ -21,7 +22,7 @@ public class PhaseDash extends CustomTitanCard {
 
     private static final int COST = 1;
     private static final int INTANGIBLE = 1;
-    private static final int DISCARD = 2;
+    private static final int DISCARD = 3;
     private static final int UPGRADE_PLUS_DISCARD = -1;
 
     public PhaseDash() {
@@ -35,13 +36,11 @@ public class PhaseDash extends CustomTitanCard {
     }
 
     @Override
-    public boolean shouldGlowGold() {
-        return isEngaging(false);
-    }
+    public boolean shouldGlowGold() { return ((Pilot) AbstractDungeon.player).hasAdvantage();}
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-       if (isEngaging (true)) {
+       if (((Pilot)p).hasAdvantage()) {
            addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
            addToBot(new DiscardAction(p, p, metaMagicNumber, false));
        }
