@@ -22,9 +22,8 @@ public class CAR extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADE_PLUS_DMG = 1;
-    private static final int MOMENTUM = 1;
+    private static final int DAMAGE = 1;
+    private static final int MOMENTUM = 2;
 
 
     public CAR() {
@@ -45,7 +44,6 @@ public class CAR extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeDescription();
         }
     }

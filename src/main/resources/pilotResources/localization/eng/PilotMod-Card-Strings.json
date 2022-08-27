@@ -9,8 +9,8 @@
   },
   "pilot:Pilot_Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum.",
-    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum."
+    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust"
   },
   "pilot:Titanfall": {
     "NAME": "Titanfall",
