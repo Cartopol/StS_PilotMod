@@ -260,7 +260,7 @@ public abstract class CustomPilotModCard extends CustomCard {
 
 
 
-    @Override
+/*    @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
         if (ReflexFieldPatch.hasReflex.get(this)) {
@@ -272,7 +272,7 @@ public abstract class CustomPilotModCard extends CustomCard {
 //            AbstractDungeon.actionManager.addToTop(new NewQueueCardAction(this, true, true, true));
 //            AbstractDungeon.actionManager.addToBottom(new MillAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
-    }
+    }*/
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import pilot.PilotMod;
 import pilot.cards.pilot.titan_deck.CustomTitanCard;
 import pilot.characters.Pilot;
@@ -37,6 +38,15 @@ public class PhaseDash extends CustomTitanCard {
 
     @Override
     public boolean shouldGlowGold() { return ((Pilot) AbstractDungeon.player).hasAdvantage();}
+
+    public void triggerWhenDrawn(){
+        super.triggerWhenDrawn();
+        if (ReflexFieldPatch.hasReflex.get(this)) {
+            if (((Pilot) AbstractDungeon.player).isReflexed()){
+                addToBot(new ReduceCostAction(this.uuid, 1));
+            }
+        }
+    }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

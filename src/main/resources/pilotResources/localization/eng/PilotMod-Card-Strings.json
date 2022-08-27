@@ -9,7 +9,7 @@
   },
   "pilot:Pilot_Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust.",
+    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum.",
     "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum."
   },
   "pilot:Titanfall": {
@@ -23,15 +23,11 @@
   },
   "pilot:Kick": {
     "NAME": "Kick",
-    "DESCRIPTION": " pilot:Reflex. NL Deal !D! damage. NL Draw !M! card."
-  },
-  "pilot:Mozambique": {
-    "NAME": "Mozambique",
-    "DESCRIPTION": "Reflex. NL Deal !D! damage and apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Reflex: Draw !M! card."
   },
   "pilot:Carbine": {
     "NAME": "R-201 Carbine",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! pilot:Momentum."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block."
   },
   "pilot:Flatline": {
     "NAME": "Flatline",
@@ -73,8 +69,8 @@
   },
   "pilot:BatteryBackUp": {
     "NAME": "Battery Back-up",
-    "DESCRIPTION": "Give your Titan !M! pilot:Shields. NL Shuffle !M! pilot:Armaments from your exhaust pile into your Titan. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Give your Titan !M! pilot:Shields. NL Shuffle !M! pilot:Armaments from your exhaust pile into your Titan. Exhaust."
+    "DESCRIPTION": "Give your Titan !M! pilot:Shields. NL Shuffle !pilot:MetaMagic! pilot:Armaments from your exhaust pile into your Titan. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Give your Titan !M! pilot:Shields. NL Shuffle !pilot:MetaMagic! pilot:Armaments from your exhaust pile into your Titan. Exhaust."
   },
   "pilot:WallHang": {
     "NAME": "Wall Hang",
@@ -104,8 +100,8 @@
   },
   "pilot:PhaseDash": {
     "NAME": "Phase Dash",
-    "DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Advantage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards.",
-    "UPGRADE_DESCRIPTION": " pilot:Armament. NL pilot:Reflex. pilot:Engage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card."
+    "DESCRIPTION": " pilot:Armament. NL pilot:Advantage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! cards. NL pilot:Reflex: Reduce the cost by 1.",
+    "UPGRADE_DESCRIPTION": " pilot:Armament. pilot:Advantage: NL Gain !M! Intangible. NL Discard !pilot:MetaMagic! card. NL pilot:Reflex: Reduce the cost by 1."
   },
   "pilot:Ronin": {
     "NAME": "Ronin",
@@ -138,8 +134,8 @@
   },
   "pilot:SmokeBomb": {
     "NAME": "Smoke Bomb",
-    "DESCRIPTION": " Draw !M! cards. NL Fill your hand with *Dazed. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Draw !M! cards. NL Fill your hand with *Dazed. NL Exhaust."
+    "DESCRIPTION": " Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Add !M! *Dazed to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Add !M! *Dazed to your hand."
   },
   "pilot:Rush": {
     "NAME": "Rush",
@@ -151,24 +147,25 @@
   },
   "pilot:Protocol3": {
     "NAME": "Protocol 3",
-    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, gain !M! pilot:Protect."
+    "DESCRIPTION": " pilot:Armament NL At the start of your turn, gain !M! pilot:Protect."
   },
   "pilot:AdvancedAutoTitan": {
     "NAME": "Advanced Auto Titan",
-    "DESCRIPTION": " pilot:Armament. NL At the start of your turn, draw !M! pilot:Armament."
+    "DESCRIPTION": " pilot:Armament NL At the start of your turn, draw !M! pilot:Armament."
   },
   "pilot:GunShield": {
     "NAME": "Gun Shield",
-    "DESCRIPTION": " pilot:Armament. NL Whenever you play an pilot:Armament Attack, gain !M! pilot:Shields."
+    "DESCRIPTION": " pilot:Armament NL Whenever you play an pilot:Armament Attack, gain !M! pilot:Shields."
   },
   "pilot:ApexForm": {
     "NAME": "Apex Form",
-    "DESCRIPTION": "Whenever you play a card, gain !M! pilot:Momentum.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! pilot:Momentum."
+    "DESCRIPTION": "Ethereal Whenever you play a card, gain !M! pilot:Momentum.",
+    "UPGRADE_DESCRIPTION": "Innate Ethereal NL Whenever you play a card, gain !M! pilot:Momentum."
   },
   "pilot:Pull_the_Pin": {
     "NAME": "Pull the Pin",
-    "DESCRIPTION": "Add 1 *Frag to the top of your draw pile."
+    "DESCRIPTION": "Add 1 *Frag to the top of your draw pile. Exhaust.",
+    "UPGRADE_DESCRIPTION" : "Add 1 *Frag to the top of your draw pile."
   },
   "pilot:Frag": {
     "NAME": "Frag",

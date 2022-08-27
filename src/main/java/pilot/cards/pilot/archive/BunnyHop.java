@@ -1,4 +1,4 @@
-package pilot.cards.pilot;
+package pilot.cards.pilot.archive;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -15,7 +15,7 @@ import pilot.powers.MomentumPower;
 public class BunnyHop extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(BunnyHop.class);
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;

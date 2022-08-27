@@ -20,7 +20,7 @@ public class Mastiff extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 12;
-    private static final int UPGRADED_PLUS_DMG = 5;
+    private static final int UPGRADED_PLUS_DMG = 6;
 
     public Mastiff() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);

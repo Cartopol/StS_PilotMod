@@ -22,6 +22,7 @@ public class ApexForm extends CustomPilotModCard {
     public ApexForm() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MOMENTUM;
+        this.isEthereal = true;
     }
 
     @Override

@@ -17,7 +17,7 @@ public class Frag extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 16;
     private static final int UPGRADE_PLUS_DMG = 10;
 
     public Frag() {

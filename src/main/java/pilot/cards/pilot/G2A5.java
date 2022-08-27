@@ -15,15 +15,15 @@ import pilot.powers.MomentumPower;
 public class G2A5 extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(G2A5.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int COST = 1;
+    private static final int DAMAGE = 8;
     private static final int MOMENTUM = 2;
+    private static final int UPGRADE_PLUS_MOMENTUM = 1;
 
     public G2A5() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -49,7 +49,7 @@ public class G2A5 extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_MOMENTUM);
             upgradeDescription();
         }
     }

@@ -19,8 +19,8 @@ public class Wallrun extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int BLOCK = 3;
-    private static final int MOMENTUM = 1;
-    private static final int UPGRADE_PLUS_MOMENTUM = 1;
+    private static final int MOMENTUM = 2;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public Wallrun() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -38,7 +38,7 @@ public class Wallrun extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_MOMENTUM);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeDescription();
         }
     }

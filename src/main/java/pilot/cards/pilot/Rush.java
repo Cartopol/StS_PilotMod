@@ -14,7 +14,7 @@ import pilot.powers.MomentumPower;
 public class Rush extends CustomPilotModCard{
     public static final String ID = PilotMod.makeID(Rush.class);
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
