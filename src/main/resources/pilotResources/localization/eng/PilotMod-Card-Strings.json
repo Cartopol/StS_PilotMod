@@ -134,7 +134,7 @@
   },
   "pilot:SmokeBomb": {
     "NAME": "Smoke Bomb",
-    "DESCRIPTION": " Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Add !M! *Dazed to your hand. NL Exhaust.",
+    "DESCRIPTION": " Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Fill your hand with *Dazed. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Add !M! *Dazed to your hand."
   },
   "pilot:Rush": {

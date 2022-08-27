@@ -19,7 +19,7 @@ public class Alternator extends CustomPilotModCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int DAMAGE = 3;
 
 
