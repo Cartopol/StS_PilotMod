@@ -1,7 +1,6 @@
 package pilot.cards.pilot;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
 import pilot.characters.Pilot;
-import pilot.powers.MomentumPower;
 
 public class Carbine extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(Carbine.class);

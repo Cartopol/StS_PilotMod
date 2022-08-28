@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pilot.PilotMod;
 import pilot.cards.CustomPilotModCard;
+import pilot.cards.pilot.tempCards.Electric_Smoke;
 import pilot.characters.Pilot;
 import pilot.patches.ReflexFieldPatch;
 
@@ -25,7 +26,7 @@ public class SmokeBomb extends CustomPilotModCard {
 
     public SmokeBomb() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        cardsToPreview = new Dazed();
+        cardsToPreview = new Electric_Smoke();
         exhaust = true;
         selfRetain = true;
         magicNumber = baseMagicNumber = REFLEX_DAZED;
@@ -38,7 +39,7 @@ public class SmokeBomb extends CustomPilotModCard {
         if (ReflexFieldPatch.hasReflex.get(this)) {
             if (((Pilot) AbstractDungeon.player).isReflexed()) {
                 for (int i = 10; i > (AbstractDungeon.player).hand.size() + 1; --i) {
-                    addToBot(new MakeTempCardInHandAction(new Dazed()));
+                    addToBot(new MakeTempCardInHandAction(new Electric_Smoke()));
                 }
             }
         }
@@ -48,7 +49,7 @@ public class SmokeBomb extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         // count down from the hand limit to the player's hand size
         for (int i = 10; i > p.hand.size() - 1; --i) {
-            addToBot(new MakeTempCardInHandAction(new Dazed()));
+            addToBot(new MakeTempCardInHandAction(new Electric_Smoke()));
         }
     }
 

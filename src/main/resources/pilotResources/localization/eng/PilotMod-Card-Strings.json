@@ -134,8 +134,8 @@
   },
   "pilot:SmokeBomb": {
     "NAME": "Smoke Bomb",
-    "DESCRIPTION": " Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Fill your hand with *Dazed. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Fill your hand with *Dazed. NL pilot:Reflex: Add !M! *Dazed to your hand."
+    "DESCRIPTION": " Retain. NL Fill your hand with *Electric Smoke. NL pilot:Reflex: Fill your hand with *Electric Smoke. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Fill your hand with *Electric Smoke. NL pilot:Reflex: Add !M! *Electric Smoke to your hand."
   },
   "pilot:Rush": {
     "NAME": "Rush",
@@ -183,5 +183,9 @@
     "NAME": "Dome Shield",
     "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect.",
     "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect. NL Gain !pilot:MetaMagic! Shields."
+  },
+  "pilot:Electric_Smoke": {
+    "NAME": "Electric Smoke",
+    "DESCRIPTION": "Deal 1 Damage. NL Gain 1 Block. NL Exhaust"
   }
 }
