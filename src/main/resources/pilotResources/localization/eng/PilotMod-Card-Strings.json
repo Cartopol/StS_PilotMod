@@ -55,13 +55,13 @@
   },
   "pilot:Alternator": {
     "NAME": "Alternator",
-    "DESCRIPTION": "Deal !D! damage to a random enemy 3 times.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy 4 times."
+    "DESCRIPTION": "Deal !D! damage to a random enemy 2 times. NL pilot:Advantage: Deal !D! damage an additional time.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to a random enemy 2 times. NL pilot:Advantage: Deal !D! damage an additional 2 times."
   },
   "pilot:CAR": {
     "NAME": "CAR",
-    "DESCRIPTION": "Deal !D! damage twice.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Gain !M! Momentum."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Reflex: Deal !D! damage twice.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Momentum. NL pilot:Reflex: Deal !D! damage twice."
   },
   "pilot:Guard": {
     "NAME": "Guard",
@@ -78,7 +78,8 @@
   },
   "pilot:Airstrafe": {
     "NAME": "Airstrafe",
-    "DESCRIPTION": "Double your pilot:Momentum. NL Exhaust."
+    "DESCRIPTION": "DOUBLE your pilot:Momentum. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "TRIPLE your pilot:Momentum. NL Exhaust."
   },
   "pilot:Pilot_Dash": {
     "NAME": "Dash",

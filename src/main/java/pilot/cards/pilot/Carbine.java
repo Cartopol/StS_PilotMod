@@ -19,7 +19,7 @@ public class Carbine extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int BLOCK = 3;
     private static final int UPGRADE_PLUS_BLOCK = 2;

@@ -18,7 +18,7 @@ public class Wallrun extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int BLOCK = 3;
+    private static final int BLOCK = 6;
     private static final int MOMENTUM = 2;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 

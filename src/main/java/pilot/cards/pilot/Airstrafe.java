@@ -29,7 +29,12 @@ public class Airstrafe extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(MomentumPower.POWER_ID)) {
             AbstractPower momentumPower = p.getPower(MomentumPower.POWER_ID);
-            addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, momentumPower.amount)));
+            if (!upgraded) {
+                addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, momentumPower.amount)));
+            }
+            if (upgraded){
+                addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, (momentumPower.amount * 2))));
+            }
         }
     }
 

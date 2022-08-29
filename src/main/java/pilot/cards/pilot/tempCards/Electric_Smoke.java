@@ -45,7 +45,6 @@ public class Electric_Smoke extends CustomPilotModCard{
     public void triggerOnEndOfTurnForPlayingCard() {
         this.dontTriggerOnUseCard = true;
         AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-
     }
 
     @Override

@@ -19,7 +19,7 @@ public class Pilot_Sprint extends CustomPilotModCard {
 
     private static final int COST = 1;
     private static final int DRAW = 1;
-    private static final int MOMENTUM = 3;
+    private static final int MOMENTUM = 4;
     private static final int UPGRADED_PLUS_MOMENTUM = 2;
 
     public Pilot_Sprint() {

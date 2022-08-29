@@ -18,7 +18,7 @@
   },
   {
     "NAMES": ["momentum"],
-    "DESCRIPTION": "Momentum improves Attack Damage and Block gained from cards. At end of turn, it is reduced by half."
+    "DESCRIPTION": "Momentum improves Attack Damage and Block gained from cards. Lose half whenever you play a card that deals Damage or gains Block."
   },
   {
     "NAMES": ["armament", "armaments"],
@@ -34,7 +34,7 @@
   },
   {
     "NAMES": ["shields"],
-    "DESCRIPTION": "When depleted, your Titan is destroyed."
+    "DESCRIPTION": "When depleted, your Titan is destroyed. Any excess damage your Titan receives is dealt to you."
   },
   {
     "NAMES": ["protect", "protected"],

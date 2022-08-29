@@ -23,7 +23,7 @@ public class G2A5 extends CustomPilotModCard {
     private static final int COST = 1;
     private static final int DAMAGE = 8;
     private static final int MOMENTUM = 2;
-    private static final int UPGRADE_PLUS_MOMENTUM = 1;
+    private static final int UPGRADE_PLUS_MOMENTUM = 2;
 
     public G2A5() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
