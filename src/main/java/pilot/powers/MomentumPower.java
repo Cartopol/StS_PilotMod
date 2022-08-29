@@ -1,6 +1,8 @@
 package pilot.powers;
 
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,6 +13,7 @@ import pilot.PilotMod;
 public class MomentumPower extends CustomPilotModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(MomentumPower.class);
     public static final String POWER_ID = STATIC.ID;
+    public static final boolean LOSE_MOMENTUM = false;
 
     public MomentumPower(AbstractCreature owner, int amount) {
         super(STATIC);
@@ -34,6 +37,25 @@ public class MomentumPower extends CustomPilotModPower {
         return type == DamageInfo.DamageType.NORMAL ? damage + (float)this.amount : damage;
     }
 
+    public void onUseCard(AbstractCard card, UseCardAction action){
+        if ((card.baseDamage > 0) || (card.baseBlock > 0)){
+            AbstractPlayer p = AbstractDungeon.player;
+            int reduceBy = 0;
+
+            if (this.amount == 1) {
+                reduceBy = 1;
+            }
+
+            if (this.amount > 1) {
+                reduceBy = this.amount / 2;
+            }
+
+            addToBot(new ReducePowerAction(p, p, this, reduceBy));
+            PilotMod.logger.info("Reduced Momentum by {}", reduceBy);
+        }
+    }
+
+/*
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
@@ -54,7 +76,7 @@ public class MomentumPower extends CustomPilotModPower {
         }
         super.atEndOfTurn(isPlayer);
     }
-
+*/
     @Override
     public void updateDescription() {
             description = String.format(DESCRIPTIONS[0], amount);

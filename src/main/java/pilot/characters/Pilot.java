@@ -55,7 +55,7 @@ import static pilot.characters.Pilot.Enums.PILOT_CARD_COLOR;
 //All text (starting description and loadout, anything labeled TEXT[]) can be found in PilotMod-Character-Strings.json in the resources
 
 public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDrawCardSubscriber {
-    private static final int TITAN_BASE_SHIELDS = 10;
+    private static final int TITAN_BASE_SHIELDS = 8;
     private static final int ADVANTAGE_THRESHOLD = 5;
     public boolean startCounting;
 
@@ -123,8 +123,8 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDr
     // =============== BASE STATS =================
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 70;
-    public static final int MAX_HP = 70;
+    public static final int STARTING_HP = 60;
+    public static final int MAX_HP = 60;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 4;
     public static final int ORB_SLOTS = 0;
