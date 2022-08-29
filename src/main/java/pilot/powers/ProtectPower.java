@@ -30,7 +30,6 @@ public class ProtectPower extends CustomPilotModPower {
             ((Pilot)AbstractDungeon.player).getTitan().damageTitan(damageAmount);
             return 0;
         }
-
         return damageAmount;
     }
 
