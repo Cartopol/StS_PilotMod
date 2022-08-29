@@ -5,7 +5,10 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -59,6 +62,7 @@ public class TitanOrb extends AbstractOrb {
         currentShields -= amount;
         logger.info("Reduced shields by {}, current shields: {}", amount, currentShields);
         if (currentShields <= 0) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, Math.abs(currentShields), DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
         }
     }
