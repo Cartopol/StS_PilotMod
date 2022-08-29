@@ -29,6 +29,9 @@ public class Alternator extends CustomPilotModCard {
     }
 
     @Override
+    public boolean shouldGlowGold() { return ((Pilot) AbstractDungeon.player).hasAdvantage();}
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
         this.addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));

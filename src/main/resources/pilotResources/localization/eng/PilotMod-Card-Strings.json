@@ -144,7 +144,7 @@
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",
-    "DESCRIPTION": " Deal !D! Damage. NL Pilot:Advantage: Double the damage dealt. Exhaust."
+    "DESCRIPTION": " Deal !D! Damage. NL pilot:Advantage: Double the damage dealt. Exhaust."
   },
   "pilot:Protocol3": {
     "NAME": "Protocol 3",

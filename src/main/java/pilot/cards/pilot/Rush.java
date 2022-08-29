@@ -21,8 +21,8 @@ public class Rush extends CustomPilotModCard{
 
     private static final int COST = 1;
     private static final int DISCARD = 1;
-    private static final int MOMENTUM = 2;
-    private static final int UPGRADE_COST = 0;
+    private static final int MOMENTUM = 3;
+    private static final int UPGRADE_PLUS_DISCARD = -1;
 
     public Rush() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -42,7 +42,7 @@ public class Rush extends CustomPilotModCard{
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_DISCARD);
         }
     }
 }
