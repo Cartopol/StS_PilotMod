@@ -18,20 +18,17 @@ public class Pilot_Sprint extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DRAW = 1;
-    private static final int MOMENTUM = 4;
+    private static final int MOMENTUM = 5;
     private static final int UPGRADED_PLUS_MOMENTUM = 2;
 
     public Pilot_Sprint() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = DRAW;
         urMagicNumber = baseUrMagicNumber = MOMENTUM;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawCardAction(magicNumber));
         addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, urMagicNumber)));
     }
 

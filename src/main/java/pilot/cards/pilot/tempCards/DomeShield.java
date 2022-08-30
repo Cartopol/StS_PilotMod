@@ -22,8 +22,8 @@ public class DomeShield extends CustomTitanCard{
 
     private static final int COST = 0;
     private static final int PROTECT = 1;
-    private static final int SHIELDS = 0;
-    private static final int UPGRADE_SHIELDS = 5;
+    private static final int SHIELDS = 2;
+    private static final int UPGRADE_SHIELDS = 3;
 
     public DomeShield() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);

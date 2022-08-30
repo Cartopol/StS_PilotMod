@@ -21,7 +21,7 @@ public class Shield extends CustomTitanCard {
     private static final int COST = 1;
     private static final int SHIELDS = 3;
     private static final int PROTECT = 1;
-    private static final int UPGRADE_PLUS_SHIELDS = 2;
+    private static final int UPGRADE_PLUS_SHIELDS = 3;
 
     public Shield() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);

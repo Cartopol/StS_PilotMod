@@ -17,8 +17,7 @@ public class Airstrafe extends CustomPilotModCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 0;
 
     public Airstrafe() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -29,12 +28,8 @@ public class Airstrafe extends CustomPilotModCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(MomentumPower.POWER_ID)) {
             AbstractPower momentumPower = p.getPower(MomentumPower.POWER_ID);
-            if (!upgraded) {
                 addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, momentumPower.amount)));
-            }
-            if (upgraded){
-                addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, (momentumPower.amount * 2))));
-            }
+
         }
     }
 
@@ -42,8 +37,8 @@ public class Airstrafe extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
             upgradeDescription();
+            this.exhaust = false;
         }
     }
 }

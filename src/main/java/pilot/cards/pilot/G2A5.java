@@ -21,7 +21,7 @@ public class G2A5 extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 9;
     private static final int MOMENTUM = 2;
     private static final int UPGRADE_PLUS_MOMENTUM = 2;
 

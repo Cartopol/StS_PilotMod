@@ -9,8 +9,7 @@
   },
   "pilot:Pilot_Sprint": {
     "NAME": "Sprint",
-    "DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Draw !M! card. NL Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust"
+    "DESCRIPTION": "Gain !pilot:UrMagic! pilot:Momentum. NL Exhaust"
   },
   "pilot:Titanfall": {
     "NAME": "Titanfall",
@@ -43,7 +42,7 @@
   },
   "pilot:Volt": {
     "NAME": "Volt",
-    "DESCRIPTION": "Deal !D! damage. NL If you have pilot:Momentum, gain [E] ."
+    "DESCRIPTION": "Deal !D! damage. NL pilot:Reflex gain [E] ."
   },
   "pilot:G2A5": {
     "NAME": "G2A5",
@@ -79,7 +78,7 @@
   "pilot:Airstrafe": {
     "NAME": "Airstrafe",
     "DESCRIPTION": "DOUBLE your pilot:Momentum. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "TRIPLE your pilot:Momentum. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "DOUBLE your pilot:Momentum."
   },
   "pilot:Pilot_Dash": {
     "NAME": "Dash",
@@ -140,7 +139,7 @@
   },
   "pilot:Rush": {
     "NAME": "Rush",
-    "DESCRIPTION": "Gain !pilot:MetaMagic! Momentum. NL Discard !M! card. NL Add 1 Mastiff to your hand."
+    "DESCRIPTION": "Gain !pilot:MetaMagic! Momentum. NL Add 1 Mastiff to your hand. NL Discard !M! card."
   },
   "pilot:Mastiff": {
     "NAME": "Mastiff",

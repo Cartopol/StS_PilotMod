@@ -34,9 +34,8 @@ public class Rush extends CustomPilotModCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, metaMagicNumber)));
-        addToBot(new DiscardAction(p, p, magicNumber, false));
         addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeStatEquivalentCopy(), 1));
-
+        addToBot(new DiscardAction(p, p, magicNumber, false));
     }
 
     public void upgrade() {
