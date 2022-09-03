@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardGroup.CardGroupType;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import pilot.actions.PileToHandAction;
-import pilot.cards.OnDrawCardSubscriber;
-import pilot.cards.pilot.titan_deck.armaments.Rearm;
+import pilot.actions.TopOfPileToHandAction;
 
 import java.util.ArrayList;
 
@@ -23,27 +21,10 @@ public class TitanDeck {
     }
 
     public static void drawArmament(boolean leaveCopyInTitanDeck) {
-        if (masterTitanDeck.size() > 0) {
-            // Draw the top card of the masterTitanDeck
-            AbstractCard c = masterTitanDeck.getTopCard();
-
-            if (leaveCopyInTitanDeck) {
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(masterTitanDeck.getTopCard()));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new PileToHandAction(TitanDeck.masterTitanDeck, masterTitanDeck.getTopCard()));
-            }
-            if (c instanceof OnDrawCardSubscriber) {
-                ((OnDrawCardSubscriber) c).onDraw();
-            }
-            if (AbstractDungeon.player instanceof OnDrawCardSubscriber) {
-                ((OnDrawCardSubscriber)AbstractDungeon.player).onDraw();
-            }
-            c.triggerWhenDrawn();
-
-
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new Rearm()));
+        if (leaveCopyInTitanDeck) {
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(masterTitanDeck.getTopCard()));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new TopOfPileToHandAction(TitanDeck.masterTitanDeck, true));
         }
     }
 

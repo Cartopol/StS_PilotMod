@@ -458,7 +458,7 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDr
         super.applyStartOfTurnPostDrawRelics();
 
         if (this.hasTitan()) {
-            AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+            AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(1));
         }
         else {
             PilotMod.logger.info("Pilot does not have a Titan, skipping Armament draw");
@@ -495,7 +495,7 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDr
         PilotMod.logger.info("Battle Start: Titan created");
         AbstractDungeon.actionManager.addToTop(new ChannelAction(new TitanOrb(TITAN_BASE_SHIELDS)));
         PilotMod.logger.info("Drawing Armament for 1st turn of combat");
-        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(1));
         cardsDrawnAfterStartOfTurn = 0;
         startCounting = false;
 

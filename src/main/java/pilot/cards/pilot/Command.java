@@ -28,10 +28,7 @@ public class Command extends CustomPilotModCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DrawArmamentAction(false));
-        if (upgraded = true) { //this only seems to work sometimes and I'm not sure why
-            addToBot(new DrawArmamentAction(false));
-        }
+        addToBot(new DrawArmamentAction(magicNumber));
     }
 
     @Override

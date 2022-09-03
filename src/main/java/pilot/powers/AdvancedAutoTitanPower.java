@@ -3,6 +3,7 @@ package pilot.powers;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import pilot.PilotMod;
 import pilot.actions.DrawArmamentAction;
 
 public class AdvancedAutoTitanPower extends CustomPilotModPower {
@@ -22,9 +23,10 @@ public class AdvancedAutoTitanPower extends CustomPilotModPower {
 
 
     @Override
-    public void atStartOfTurn() {
+    public void atStartOfTurnPostDraw() {
         super.atStartOfTurn();
-        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(false));
+        PilotMod.logger.info("Drawing for Advanced Auto Pilot power");
+        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(1));
     }
 
     @Override

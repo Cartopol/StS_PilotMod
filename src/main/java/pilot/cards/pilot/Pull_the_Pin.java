@@ -20,7 +20,7 @@ public class Pull_the_Pin extends CustomPilotModCard {
     public Pull_the_Pin() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new Frag();
-        this.exhaust = true;
+        isEthereal = true;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Pull_the_Pin extends CustomPilotModCard {
         if (!upgraded) {
             upgradeName();
             upgradeDescription();
-            this.exhaust = false;
+            isEthereal = false;
         }
     }
 }
