@@ -59,8 +59,7 @@
   },
   "pilot:CAR": {
     "NAME": "CAR",
-    "DESCRIPTION": "Deal !D! damage. NL pilot:Reflex: Deal !D! damage twice.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Momentum. NL pilot:Reflex: Deal !D! damage twice."
+    "DESCRIPTION": "Deal !D! damage 2 times. NL pilot:Reflex: Gain !M! pilot:Momentum."
   },
   "pilot:Guard": {
     "NAME": "Guard",

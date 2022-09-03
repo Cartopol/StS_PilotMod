@@ -1,7 +1,6 @@
-package pilot.cards.pilot;
+package pilot.cards.pilot.archive;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,7 +13,7 @@ import pilot.patches.ReflexFieldPatch;
 public class SmokeBomb extends CustomPilotModCard {
     public static final String ID = PilotMod.makeID(SmokeBomb.class);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;

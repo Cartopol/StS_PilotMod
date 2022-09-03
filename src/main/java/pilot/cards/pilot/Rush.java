@@ -19,10 +19,10 @@ public class Rush extends CustomPilotModCard{
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DISCARD = 1;
     private static final int MOMENTUM = 3;
-    private static final int UPGRADE_PLUS_DISCARD = -1;
+    private static final int UPGRADE_PLUS_MOMENTUM = 3;
 
     public Rush() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -41,7 +41,7 @@ public class Rush extends CustomPilotModCard{
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_PLUS_DISCARD);
+            upgradeMetaMagicNumber(UPGRADE_PLUS_MOMENTUM);
         }
     }
 }

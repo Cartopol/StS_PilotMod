@@ -19,7 +19,7 @@ public class Mastiff extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 10;
     private static final int UPGRADED_PLUS_DMG = 6;
 
     public Mastiff() {

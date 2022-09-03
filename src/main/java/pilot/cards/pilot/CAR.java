@@ -23,8 +23,9 @@ public class CAR extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 1;
     private static final int MOMENTUM = 2;
+    private static final int UPGRADE_PLUS_MOMENTUM = 1;
 
 
     public CAR() {
@@ -37,16 +38,15 @@ public class CAR extends CustomPilotModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
-        if (upgraded)
-            { addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, magicNumber))); }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage), AttackEffect.SLASH_HORIZONTAL));
+
     }
     @Override
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
         if (ReflexFieldPatch.hasReflex.get(this)) {
             if (((Pilot) AbstractDungeon.player).isReflexed()) {
-                addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
-                addToBot(new AttackDamageRandomEnemyAction(this, AttackEffect.SLASH_HORIZONTAL));
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MomentumPower(AbstractDungeon.player, magicNumber)));
             }
         }
     }
@@ -55,6 +55,7 @@ public class CAR extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_MOMENTUM);
             upgradeDescription();
         }
     }

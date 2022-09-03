@@ -21,9 +21,9 @@ public class Kick extends CustomPilotModCard {
     public static final CardColor COLOR = Pilot.Enums.PILOT_CARD_COLOR;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 4;
     private static final int DRAW = 1;
+    private static final int UPGRADE_PLUS_DRAW = 1;
 
     public Kick() {
         super(ID, COST, TYPE, COLOR, RARITY, TARGET);
@@ -57,7 +57,7 @@ public class Kick extends CustomPilotModCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(UPGRADE_PLUS_DRAW);
             upgradeDescription();
         }
     }
