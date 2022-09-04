@@ -180,8 +180,7 @@
   },
   "pilot:DomeShield": {
     "NAME": "Dome Shield",
-    "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect.",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect. NL Gain !pilot:MetaMagic! Shields."
+    "DESCRIPTION": "Ethereal. NL Gain !M! pilot:Protect. NL Gain exactly !pilot:MetaMagic! Block."
   },
   "pilot:Electric_Smoke": {
     "NAME": "Electric Smoke",

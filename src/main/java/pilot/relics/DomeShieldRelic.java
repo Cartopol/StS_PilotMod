@@ -2,11 +2,14 @@ package pilot.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
 import pilot.PilotMod;
+import pilot.cards.pilot.tempCards.DomeShield;
 import pilot.util.TextureLoader;
 
-public abstract class CustomPilotModRelic extends CustomRelic {
+public abstract class DomeShieldRelic extends CustomRelic {
+    public static final String ID = "DomeShieldRelic";
     public final CardColor relicColor;
 
     private static Texture relicTextureFromId(String id) {
@@ -21,7 +24,7 @@ public abstract class CustomPilotModRelic extends CustomRelic {
         return TextureLoader.getTexture(path);
     }
 
-    public CustomPilotModRelic(final String id, final CardColor relicColor, final RelicTier relicTier, final LandingSound landingSound) {
+    public DomeShieldRelic(final String id, final CardColor relicColor, final RelicTier relicTier, final LandingSound landingSound) {
         super(id, relicTextureFromId(id), relicOutlineTextureFromId(id), relicTier, landingSound);
         this.relicColor = relicColor;
     }
@@ -37,5 +40,11 @@ public abstract class CustomPilotModRelic extends CustomRelic {
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0].replaceAll(PilotMod.MOD_ID + ":", "#y");
+    }
+
+    @Override
+    public void atBattleStart() {
+        super.atBattleStart();
+        this.addToBot(new MakeTempCardInHandAction(new DomeShield(), 1, false));
     }
 }
