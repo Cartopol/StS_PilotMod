@@ -8,7 +8,7 @@ import pilot.PilotMod;
 import pilot.cards.pilot.tempCards.DomeShield;
 import pilot.util.TextureLoader;
 
-public abstract class DomeShieldRelic extends CustomRelic {
+public abstract class CustomPilotModRelic extends CustomRelic {
     public static final String ID = "DomeShieldRelic";
     public final CardColor relicColor;
 
@@ -24,7 +24,7 @@ public abstract class DomeShieldRelic extends CustomRelic {
         return TextureLoader.getTexture(path);
     }
 
-    public DomeShieldRelic(final String id, final CardColor relicColor, final RelicTier relicTier, final LandingSound landingSound) {
+    public CustomPilotModRelic(final String id, final CardColor relicColor, final RelicTier relicTier, final LandingSound landingSound) {
         super(id, relicTextureFromId(id), relicOutlineTextureFromId(id), relicTier, landingSound);
         this.relicColor = relicColor;
     }

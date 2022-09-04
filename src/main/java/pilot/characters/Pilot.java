@@ -25,7 +25,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import pilot.relics.DomeShieldRelic;
+import pilot.relics.CustomPilotModRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import pilot.PilotMod;
@@ -249,7 +249,7 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDr
         ArrayList<String> retVal = new ArrayList<>();
 
         // Note: only the first relic gets replaced when selecting the "replace starter relic" Neow boon
-        retVal.add(DomeShieldRelic.ID);
+        retVal.add(CustomPilotModRelic.ID);
 
         return retVal;
     }

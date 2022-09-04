@@ -22,7 +22,7 @@ import org.clapper.util.classutil.RegexClassFilter;
 import pilot.cards.CustomPilotModCard;
 import pilot.cards.OnDrawCardSubscriber;
 import pilot.characters.Pilot;
-import pilot.relics.DomeShieldRelic;
+import pilot.relics.CustomPilotModRelic;
 import pilot.util.ReflectionUtils;
 import pilot.util.TextureLoader;
 import pilot.variables.BaseBlockNumber;
@@ -207,8 +207,8 @@ public class PilotMod implements
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        List<DomeShieldRelic> relics = ReflectionUtils.instantiateAllConcretePilotModSubclasses(DomeShieldRelic.class);
-        for (DomeShieldRelic relicInstance : relics) {
+        List<CustomPilotModRelic> relics = ReflectionUtils.instantiateAllConcretePilotModSubclasses(CustomPilotModRelic.class);
+        for (CustomPilotModRelic relicInstance : relics) {
             logger.info("Adding relic: " + relicInstance.relicId);
             if (relicInstance.relicColor.equals(AbstractCard.CardColor.COLORLESS)) {
                 BaseMod.addRelic(relicInstance, RelicType.SHARED);
