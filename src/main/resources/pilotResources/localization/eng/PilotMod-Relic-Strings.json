@@ -1,7 +1,7 @@
 {
-  "pilot:DomeShieldRelic": {
+  "pilot:CustomPilotModRelic": {
     "NAME": "Dome Shield",
-    "FLAVOR": "Prepare for Titanfall.",
+    "FLAVOR": "Prepare for Titanfall...",
     "DESCRIPTIONS": [
       "At the start of combat, add 1 *Dome *Shield to your hand."
     ]

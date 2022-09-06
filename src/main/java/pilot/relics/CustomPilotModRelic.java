@@ -9,7 +9,7 @@ import pilot.cards.pilot.tempCards.DomeShield;
 import pilot.util.TextureLoader;
 
 public abstract class CustomPilotModRelic extends CustomRelic {
-    public static final String ID = "DomeShieldRelic";
+    public static final String ID = "CustomPilotModRelic";
     public final CardColor relicColor;
 
     private static Texture relicTextureFromId(String id) {
