@@ -25,7 +25,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import pilot.PilotMod;
@@ -41,6 +40,7 @@ import pilot.cards.pilot.titan_deck.armaments.CoverFire;
 import pilot.cards.pilot.titan_deck.armaments.Shield;
 import pilot.patches.ArmamentFieldPatch;
 import pilot.powers.MomentumPower;
+import pilot.relics.DomeShieldRelic;
 import pilot.titan.TitanOrb;
 
 import java.util.ArrayList;
@@ -249,7 +249,7 @@ public class Pilot extends CustomPlayer implements OnStartBattleSubscriber, OnDr
         ArrayList<String> retVal = new ArrayList<>();
 
         // Note: only the first relic gets replaced when selecting the "replace starter relic" Neow boon
-        retVal.add(BurningBlood.ID);
+        retVal.add(DomeShieldRelic.ID);
 
         return retVal;
     }
