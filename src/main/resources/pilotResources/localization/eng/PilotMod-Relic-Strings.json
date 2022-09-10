@@ -1,9 +1,9 @@
 {
-  "pilot:FencingBoots": {
-    "NAME": "Fencing Boots",
-    "FLAVOR": "You are the fencing queen, young and ascension 17...",
+  "pilot:CustomPilotModRelic": {
+    "NAME": "Dome Shield",
+    "FLAVOR": "Prepare for Titanfall...",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b3 the_pilot:Posture."
+      "At the start of combat, add 1 *Dome *Shield to your hand."
     ]
   }
 }
