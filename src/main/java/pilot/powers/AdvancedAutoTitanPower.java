@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import pilot.PilotMod;
 import pilot.actions.DrawArmamentAction;
+import pilot.characters.Pilot;
 
 public class AdvancedAutoTitanPower extends CustomPilotModPower {
     public static final StaticPowerInfo STATIC = StaticPowerInfo.Load(AdvancedAutoTitanPower.class);
@@ -26,7 +27,9 @@ public class AdvancedAutoTitanPower extends CustomPilotModPower {
     public void atStartOfTurnPostDraw() {
         super.atStartOfTurn();
         PilotMod.logger.info("Drawing for Advanced Auto Pilot power");
-        AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(1));
+        if (((Pilot)owner).hasTitan()) {
+            AbstractDungeon.actionManager.addToBottom(new DrawArmamentAction(1));
+        }
     }
 
     @Override
