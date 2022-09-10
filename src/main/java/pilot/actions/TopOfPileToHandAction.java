@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.SneckoEye;
 import pilot.cards.OnDrawCardSubscriber;
 
 public class TopOfPileToHandAction extends AbstractGameAction {
@@ -42,6 +43,18 @@ public class TopOfPileToHandAction extends AbstractGameAction {
                     ((OnDrawCardSubscriber) AbstractDungeon.player).onDraw();
                 }
                 card.triggerWhenDrawn();
+
+                if (AbstractDungeon.player.hasRelic(SneckoEye.ID)) {
+                    if (card.cost >= 0) {
+                        int newCost = AbstractDungeon.cardRandomRng.random(3);
+                        if (card.cost != newCost) {
+                            card.cost = newCost;
+                            card.costForTurn = card.cost;
+                            card.isCostModified = true;
+                        }
+                        card.freeToPlayOnce = false;
+                    }
+                }
             }
         }
         this.isDone = true;
